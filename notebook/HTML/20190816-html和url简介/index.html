@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="ZH-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="referrer" content="no-referrer"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="author" content="椎咲良田"><meta name="copyright" content="椎咲良田"><meta name="og:image" content="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/avatar.jpg"><meta name="og:type" content="website"><meta name="og:site_name" content="椎咲良田"><meta name="og:url" content="sanshiliuxiao.top"><meta name="og：title" content="椎咲良田"><meta name="theme-color" content="#b854d4"><title>椎咲良田</title><link rel="canonical" href="//sanshiliuxiao.top"><link rel="dns-prefetch" href="//cdn.jsdelivr.net"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/favicon.jpg" type="image/x-icon"><link rel="stylesheet" href="/css/index.css?version=2.0.0"><link rel="stylesheet" href="/font/fontello.css?version=2.0.0"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira+Mono|Noto+Serif+SC&amp;amp;display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/lib/gitalk/gitalk.min.css"><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/lib/gitalk/gitalk.min.js"></script></head><body><div class="layout"><header><div class="header"><div class="mobile-bg" style="background-image:url(https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/mobile.png);"></div><h1 class="title">椎咲良田</h1><h2 class="subtitle">快走吧 趁风停止之前</h2><nav class="menu"><a class="menu-item pjax-main-link" href="/"><li><i class="icon-index"></i><span>首页</span></li></a><a class="menu-item pjax-main-link" href="/archives/"><li><i class="icon-archives"></i><span>归档</span></li></a><a class="menu-item pjax-main-link" href="/categories/"><li><i class="icon-categories"></i><span>分类</span></li></a><a class="menu-item pjax-main-link" href="/tags/"><li><i class="icon-tags"></i><span>标签</span></li></a><a class="menu-item pjax-main-link" href="/books/"><li><i class="icon-books"></i><span>书单</span></li></a><a class="menu-item pjax-main-link" href="/inspirations/"><li><i class="icon-inspiration"></i><span>灵感</span></li></a><a class="menu-item pjax-main-link" href="/friends/"><li><i class="icon-friends"></i><span>友链</span></li></a><a class="menu-item pjax-main-link" href="/about/"><li><i class="icon-about"></i><span>关于</span></li></a></nav></div></header><main><div class="main-wrapper"></div><div class="pjax-main-page"><div class="post"><article class="post-article"><div class="post-header"><img class="default-image" src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/postDefaultImage .png"><div class="post-head"><div class="post-title-wrapper"><h1 class="post-title">HTML和URL简介</h1></div><div class="post-meta"><span class="post-date"><i class="icon-calendar"></i><span class="date timeago" datetime="2019-08-16T02:37:53.000Z"></span></span><span class="post-hot"><i class="icon-fire"></i><span class="leancloud_visitors" id="/notebook/HTML/20190816-html和url简介/" data-flag-title="HTML和URL简介">热度<span class="leancloud-visitors-count">0</span>℃</span></span><span class="post-tags"><i class="icon-tag"></i><span class="tag">HTML</span><span class="tag">URL</span></span><span class="post-categories"><i class="icon-bookmark-empty"></i><span class="category">笔记本</span></span></div></div></div><div class="post-content"><div class="markdown"><blockquote>
+<p>阮一峰老师的 <a href="http://wangdoc.com/html/index.html" target="_blank" rel="noopener">HTML 教程</a><br>本文属于笔记性质，内容大部分出于上述教程，但会对内容进行组织，精简。<br>范围：一、二章节。</p>
+</blockquote>
+<h2 id="HTML-简介"><a href="#HTML-简介" class="headerlink" title="HTML 简介"></a>HTML 简介</h2><p>HTML： 超文本标记语言(HyperText Markup Language)，于 1990 年，由 Tim Berners-lee（李爵士）发明。 2014 年，HTML5 发布，目前广泛使用的版本就是 HTML5。</p>
+<h3 id="网页的基本骨架"><a href="#网页的基本骨架" class="headerlink" title="网页的基本骨架"></a>网页的基本骨架</h3><pre><code class="HTML">&lt;!-- &lt;!DOCTYPE html&gt; 会使浏览器按照 html5 的标准解析网页--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;!-- lang 默认是 en 中文是 zh-CN --&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;!-- head 放置网页的元信息 不会出现在网页上 --&gt;
+    &lt;head&gt;
+    &lt;!-- meta 网页的元数据 utf-8 表示 编码方式 --&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;!-- 网页标题 --&gt;
+    &lt;title&gt;hello wrold&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;!-- 网页的主体  --&gt;
+    &lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h3 id="网页的基本概念"><a href="#网页的基本概念" class="headerlink" title="网页的基本概念"></a>网页的基本概念</h3><ol>
+<li><p>标签<br>HTML 代码由许许多多的标签（tags）组成。</p>
+<pre><code class="html">&lt;!-- title 标签 --&gt;
+&lt;title&gt;网页标题&lt;/title&gt;</code></pre>
+<p>标签可以嵌套，但要保证正确的闭合顺序</p>
+<pre><code class="html">&lt;!-- 正确 --&gt;
+&lt;div&gt;&lt;p&gt;hello wrold&lt;/p&gt;&lt;/div&gt;
+&lt;!-- 错误 --&gt;
+&lt;div&gt;&lt;p&gt;hello wrold&lt;/div&gt;&lt;/p&gt;</code></pre>
+</li>
+<li><p>元素<br>标签是从源码角度来看， 元素是从编程角度来看，它们本质上是同一种东西。浏览器渲染网页，会把源码解析成一个标签树，每一个标签就是一个节点（node），称为元素（element）。<br>元素主要分为两大类：块级元素（block）、行内元素（inline）。</p>
+</li>
+<li><p>属性<br>属性（attribute）是标签的额外信息， 因为 HTMl 大小写不敏感（都会变成小写解析），因此 <code>onclick</code> 和 <code>onClick</code> 可以被认为是同一个属性</p>
+<pre><code class="html">&lt;!-- 
+  src width 都是属性
+  demo.jpg 500 都是属性值
+--&gt;
+&lt;img src=&quot;demo.jpg&quot; width=&quot;500&quot; /&gt;</code></pre>
+</li>
+<li><p>注释<br>HTML 代码可以进行注释，浏览器会自动忽略注释</p>
+<pre><code class="html">&lt;!-- 这是一个注释 --&gt;
+
+&lt;!-- 
+  允许多行注释
+  这是多行注释
+--&gt;</code></pre>
+</li>
+</ol>
+<h3 id="HTML-处理空格的规则"><a href="#HTML-处理空格的规则" class="headerlink" title="HTML 处理空格的规则"></a>HTML 处理空格的规则</h3><ol>
+<li><p>标签内容的头部和尾部的空格，一律忽略。</p>
+<pre><code class="html">&lt;p&gt;hello wrold&lt;/p&gt;
+&lt;!-- 等价 --&gt;
+&lt;p&gt;hello wrold&lt;/p&gt;</code></pre>
+</li>
+<li><p>标签内连续多个空格（包含 <code>\t</code>），合并成一个空格。</p>
+<pre><code class="html">&lt;p&gt;hello world&lt;/p&gt;
+&lt;!-- 等价 --&gt;
+&lt;p&gt;hello wrold&lt;/p&gt;</code></pre>
+</li>
+<li><p>文本内换行符（<code>\n</code>）和回车符（<code>\r</code>），替换成空格。</p>
+<pre><code class="html">&lt;p&gt;hello wrold&lt;/p&gt;
+&lt;!-- 等价 --&gt;
+&lt;p&gt;hello wrold&lt;/p&gt;</code></pre>
+</li>
+<li><p>标签与标签之间的换行符和回车符，同样替换成空格。</p>
+<pre><code class="html">&lt;p&gt;
+  hello
+
+  &lt;span&gt;wro&lt;/span&gt;
+  &lt;span&gt;ld&lt;/span&gt;
+&lt;/p&gt;
+&lt;!-- 等价 --&gt;
+&lt;p&gt;hello &lt;span&gt;wro&lt;/span&gt; &lt;span&gt;ld&lt;/span&gt;&lt;/p&gt;</code></pre>
+</li>
+</ol>
+<h2 id="URL-简介"><a href="#URL-简介" class="headerlink" title="URL 简介"></a>URL 简介</h2><p>URL：统一资源定位符（Uniform Resource Locator）</p>
+<p>互联网中，任何一种可访问的文件，都可以理解成一种资源，一个 URL 对应一个资源，但一个资源可以具有多个 URL。 URL 是互联网的基础，最常见的形式就是网页通过链接包含其他 URL，用户点击链接，就能够从一个 URL 跳转到另一个 URL。</p>
+<h3 id="网址的组成"><a href="#网址的组成" class="headerlink" title="网址的组成"></a>网址的组成</h3><pre><code class="http">https://www.example.com:80/path/to/myfile.html?key1=value1&amp;key2=value2#anchor</code></pre>
+<p>注意 <code>www.example.com</code> 这个域名中的 <code>www</code> 是有历史原因的。</p>
+<p>参考: <a href="https://www.zhihu.com/question/20414602" target="_blank" rel="noopener">为什么越来越多的网站域名不加「www」前缀？</a></p>
+<ol>
+<li><p>协议（scheme）<br>协议是浏览器请求服务器资源的方法，如 <code>http</code>、<code>https</code>、<code>ftp</code>等。如果省略协议，浏览器会自动添加上默认的协议，一般是 <code>http</code>。</p>
+</li>
+<li><p>主机（host）<br>主机表示资源所在地，一般由域名进行确定，不过域名只是为了便于记忆，起核心还是 IP 地址。<br>同一个域名下面可以具有多个子域名，比如 <code>www.example.com</code> 就是 <code>example.com</code> 的子域名。</p>
+<pre><code class="http">// 某个域名
+www.example.com
+
+// 指向某个 IP
+181.123.123.10</code></pre>
+</li>
+<li><p>端口（port）<br>同一个域名下面也可以通过端口区分不同的网站，不过一般网站的默认端口是 80， 因此 URL 可以忽略这个参数。</p>
+<pre><code class="http">www.example.com:80
+
+// 默认等价
+www.example.com</code></pre>
+</li>
+<li><p>路径（path）<br>资源所在网站的位置，路径可能只包含文件名，服务器默认情况下回跳转到该目录下的 <code>index.html</code> 文件，或者列出这个目录下的所有文件，至于如何显示，取决于服务器的设置。</p>
+<pre><code class="http">www.example.com
+
+// 默认等价
+www.example.com/index.html</code></pre>
+</li>
+<li><p>查询参数（parameter）<br>查询参数是提供给服务器的额外参数，紧跟在路径后面，使用 <code>?</code> 与路径分割。查询参数可以有一组或多组，通过键值对的方式进行设置，使用 <code>=</code> 连接键值对，多组参数使用 <code>&amp;</code> 进行连接。<br>查询参数不是必须的，如果不需要，则可以不出现在 URL 上。</p>
+<pre><code class="http">www.example.com/a/b/index.html?key1=value1&amp;key2=value2</code></pre>
+</li>
+<li><p>锚点（anchor）<br>网页内部的定位点，通常放置在 URL 的末尾，通过 <code>#</code> 分割。 如果 URL 上存在锚点 浏览器加载页面后，会自动定位到元素上具有 id 属性，并且属性值等于锚点字符的位置。</p>
+<pre><code class="http">www.example.com/a/b/index.html#1234</code></pre>
+<pre><code class="html">&lt;!-- 省略一些内容 --&gt;
+&lt;p id=&quot;1234&quot;&gt;我可以被自动定位到的哦&lt;/p&gt;</code></pre>
+</li>
+</ol>
+<h3 id="URL-字符"><a href="#URL-字符" class="headerlink" title="URL 字符"></a>URL 字符</h3><p>URL 的各个组成部分，只能使用以下字符</p>
+<ul>
+<li>26 个英文字母（大小写区分）</li>
+<li>10 个阿拉伯数字</li>
+<li>连词号（<code>-</code>）</li>
+<li>句点（<code>.</code>）</li>
+<li>下划线（<code>_</code>）</li>
+</ul>
+<p>另外还有 18 个保留字符，它们只能出现在特定的位置，比如 查询参数是以字符问号（<code>？</code>） 开头，那么问号就只能出现在查询参数开头。</p>
+<p>如果需要在其他地方进行使用，那么就必须使用它们的转义形式，转义的方法，就是在这些字符的 ASCLL 编码的十六进制形式，前面加上 百分号（<code>%</code>）。</p>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">转义</th>
+<th align="center">符号</th>
+<th align="center">转义</th>
+<th align="center">符号</th>
+<th align="center">转义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">!</td>
+<td align="center">%21</td>
+<td align="center">#</td>
+<td align="center">%23</td>
+<td align="center">$</td>
+<td align="center">%24</td>
+</tr>
+<tr>
+<td align="center">&amp;</td>
+<td align="center">%26</td>
+<td align="center">‘</td>
+<td align="center">%27</td>
+<td align="center">(</td>
+<td align="center">%28</td>
+</tr>
+<tr>
+<td align="center">)</td>
+<td align="center">%29</td>
+<td align="center">*</td>
+<td align="center">%2A</td>
+<td align="center">+</td>
+<td align="center">%2B</td>
+</tr>
+<tr>
+<td align="center">,</td>
+<td align="center">%2C</td>
+<td align="center">/</td>
+<td align="center">%2F</td>
+<td align="center">:</td>
+<td align="center">%3A</td>
+</tr>
+<tr>
+<td align="center">;</td>
+<td align="center">%3B</td>
+<td align="center">=</td>
+<td align="center">%3D</td>
+<td align="center">?</td>
+<td align="center">%3F</td>
+</tr>
+<tr>
+<td align="center">@</td>
+<td align="center">%40</td>
+<td align="center">[</td>
+<td align="center">%5B</td>
+<td align="center">]</td>
+<td align="center">%5D</td>
+</tr>
+</tbody></table>
+<p>值得注意的是，空格的转义形式是 <code>%20</code>，对于那些包含空格文件的文件名，这个转义是必须的。</p>
+<p>既不属于合法字符，也不属于保留字符，比如汉字。理论上是不需要手动转义，浏览器会自动将其转义，发送给服务器。转义的方法是使用这些字符的<code>utf-8</code> 十六进制编码，每两位算作一组，然后每组添加百分号</p>
+<pre><code class="http">www.example.com/中国.html
+
+// 等价
+www.example.com/%e4%b8%ad%e5%9b%bd.html
+
+// 原因
+中 十六进制编码是 e4b8ad，转义 %e4%b8%ad
+国 十六进制编码是 e59bbd，转义 %e5%9b%bd
+</code></pre>
+<h3 id="相对-URL-和-绝对-URL"><a href="#相对-URL-和-绝对-URL" class="headerlink" title="相对 URL 和 绝对 URL"></a>相对 URL 和 绝对 URL</h3><p>绝对 URL 是只靠 URL 本身就能够确定资源的位置，而相对 URL 还必须结合当前网页的位置才能够定位资源。</p>
+<p>相对 URL ，如果以 <code>/</code> 开头，就表示相对网站的根目录，如果直接写路径，或者以 <code>.</code> 或 <code>..</code>开头，则以当前路径为起点，推算资源的位置。</p>
+<pre><code class="http">// 一个绝对 url
+https://www.example.com/path/index.html
+
+// 相对 url
+
+假设当前网页 url 为 https://www.example.com/a/b/x.html
+
+/c/y.html
+// 等价
+https://www.example.com/c/y.html
+
+xx.html
+//等价
+https://www.example.com/a/b/xx.html
+
+./z.html
+// 等价
+https://www.example.com/a/b/z.html
+
+../m.html
+// 等价
+https://www.example.com/a/m.html
+
+//  . .. 还能够多个连用
+
+../.././n.html
+// 等价
+https://www.example.com/n.html
+</code></pre>
+<h3 id="base-标签"><a href="#base-标签" class="headerlink" title="base 标签"></a>base 标签</h3><p><code>&lt;base&gt;</code> 是一个自闭合标签，它指定网页内部所有相对 url 的计算基准，整张网页最多只能有一个 <code>&lt;base&gt;</code> 标签，必须放置 <code>&lt;head&gt;</code> 标签里面。<br><strong>注意，这个标签不是必须存在的,而且也很少用。</strong></p>
+<pre><code class="http">https://www.example.com/a/b/c.html</code></pre>
+<pre><code class="html">&lt;head&gt;
+  &lt;base href=&quot;https://www.example.com/files/&quot; target=&quot;_blank&quot; /&gt;
+&lt;/head&gt;
+
+&lt;!-- 那么相对路径的计算基准
+     不是www.example.com/a/b
+     而是 www.example.com/files/ 
+--&gt;</code></pre>
+</div></div><div class="post-art-warpper"><div class="post-art"><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-client="ca-pub-9441161448418285" data-ad-layout="in-article" data-ad-format="fluid" data-ad-slot="6860833347"></ins><script>setTimeout(() => {
+  try{
+    (adsbygoogle = window.adsbygoogle || []).push({})
+  } catch {
+    let dom = document.querySelector('.post-art-warpper');
+    dom.classList.add('hide-art')
+  }
+}, 3000)</script></div></div></article></div><div id="gitalk"></div><script>var gitalk = new Gitalk({
+    clientID: '921d6f0be7c36e212658',
+    clientSecret: '2614ce5f405d03d99d9b76da0dc0a6f75b376bd9',
+    id: '2019-08-16 10:37:53',
+    repo: 'comments',
+    owner: 'sanshiliuxiao',
+    admin: 'sanshiliuxiao'
+})
+gitalk.render('gitalk')</script></div><div class="pjax-main-loading loading"><img class="loading-image" src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/loading.gif"></div></main><footer><div class="footer site-info"><p><i class="icon-copyright"></i><span>2018</span>&minus;<span>2020</span>&nbsp;&nbsp;&nbsp;<i class="icon-heart"></i>&nbsp;&nbsp;<span>椎咲良田</span></p><p><a href="https://github.com/sanshiliuxiao/hexo-theme-aurora.git" target="_blank">hexo-theme-Aurora</a>&nbsp; | &nbsp;快走吧 趁风停止之前</p></div></footer></div><div class="bg"><div class="pc-dynamic-bg"><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/1.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/2.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/3.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/4.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/5.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/6.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/7.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/8.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/9.jpg"></span></div></div><span class="back-to-top"></span><div class="leancloud"><script src="/js/third-party/leancloud.min.js?version=2.0.0"></script><div class="leancloud-app-id" leancloud-app-id="QAIKomD08e9fmVRQP4tkzUDf-MdYXbMMI"></div><div class="leancloud-app-key" leancloud-app-key="vi0TViY0HvYocUR3HxKGd1l9"></div><div class="leancloud-app-hot"></div><div class="leancloud-app-visitor"></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/lib/APlayer/APlayer.min.css"><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/lib/APlayer/APlayer.min.js"></script><div id="aplayer"></div><script>let list = JSON.parse('[{"name":"Once more","artist":"阿保剛","url":"https://files.catbox.moe/13boxb.mp3","cover":"https://i.loli.net/2019/04/18/5cb87157c617e.jpg"},{"name":"All or None","artist":"阿保剛","url":"https://files.catbox.moe/4x69y9.mp3","cover":"https://i.loli.net/2019/04/18/5cb87157b537a.jpg"},{"name":"Karma","artist":"阿保剛","url":"https://files.catbox.moe/r5dsuh.mp3","cover":"https://i.loli.net/2019/04/18/5cb871583cfb7.jpg"},{"name":"星の奏でる歌","artist":"阿保剛","url":"https://files.catbox.moe/m1wd57.mp3","cover":"https://i.loli.net/2019/04/18/5cb871585123b.jpg"}]')
+  const ap = new APlayer({
+      container: document.getElementById('aplayer'),
+      theme: '#b28fce',
+      audio: list,
+      fixed: true
+  });
+  ap.list.show()
+</script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/isMobile.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/timeago.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/pjax.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/zooming.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/backstretch.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/highlight.min.js"></script><script src="/js/index.js?version=2.0.0"></script></body></html>

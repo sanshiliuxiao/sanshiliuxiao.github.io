@@ -1,0 +1,313 @@
+<!DOCTYPE html><html lang="ZH-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="referrer" content="no-referrer"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="author" content="椎咲良田"><meta name="copyright" content="椎咲良田"><meta name="og:image" content="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/avatar.jpg"><meta name="og:type" content="website"><meta name="og:site_name" content="椎咲良田"><meta name="og:url" content="sanshiliuxiao.top"><meta name="og：title" content="椎咲良田"><meta name="theme-color" content="#b854d4"><title>椎咲良田</title><link rel="canonical" href="//sanshiliuxiao.top"><link rel="dns-prefetch" href="//cdn.jsdelivr.net"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/favicon.jpg" type="image/x-icon"><link rel="stylesheet" href="/css/index.css?version=2.0.0"><link rel="stylesheet" href="/font/fontello.css?version=2.0.0"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira+Mono|Noto+Serif+SC&amp;amp;display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/lib/gitalk/gitalk.min.css"><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/lib/gitalk/gitalk.min.js"></script></head><body><div class="layout"><header><div class="header"><div class="mobile-bg" style="background-image:url(https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/mobile.png);"></div><h1 class="title">椎咲良田</h1><h2 class="subtitle">快走吧 趁风停止之前</h2><nav class="menu"><a class="menu-item pjax-main-link" href="/"><li><i class="icon-index"></i><span>首页</span></li></a><a class="menu-item pjax-main-link" href="/archives/"><li><i class="icon-archives"></i><span>归档</span></li></a><a class="menu-item pjax-main-link" href="/categories/"><li><i class="icon-categories"></i><span>分类</span></li></a><a class="menu-item pjax-main-link" href="/tags/"><li><i class="icon-tags"></i><span>标签</span></li></a><a class="menu-item pjax-main-link" href="/books/"><li><i class="icon-books"></i><span>书单</span></li></a><a class="menu-item pjax-main-link" href="/inspirations/"><li><i class="icon-inspiration"></i><span>灵感</span></li></a><a class="menu-item pjax-main-link" href="/friends/"><li><i class="icon-friends"></i><span>友链</span></li></a><a class="menu-item pjax-main-link" href="/about/"><li><i class="icon-about"></i><span>关于</span></li></a></nav></div></header><main><div class="main-wrapper"></div><div class="pjax-main-page"><div class="post"><article class="post-article"><div class="post-header"><img class="default-image" src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/postDefaultImage .png"><div class="post-head"><div class="post-title-wrapper"><h1 class="post-title">HTML其他常用标签</h1></div><div class="post-meta"><span class="post-date"><i class="icon-calendar"></i><span class="date timeago" datetime="2019-08-18T02:24:02.000Z"></span></span><span class="post-hot"><i class="icon-fire"></i><span class="leancloud_visitors" id="/notebook/HTML/20190818-HTML其他常用标签/" data-flag-title="HTML其他常用标签">热度<span class="leancloud-visitors-count">0</span>℃</span></span><span class="post-tags"><i class="icon-tag"></i><span class="tag">HTML</span></span><span class="post-categories"><i class="icon-bookmark-empty"></i><span class="category">笔记本</span></span></div></div></div><div class="post-content"><div class="markdown"><blockquote>
+<p>阮一峰老师的 <a href="http://wangdoc.com/html/index.html" target="_blank" rel="noopener">HTML 教程</a><br>本文属于笔记性质，内容大部分出于上述教程，但会对内容进行组织，精简。<br>范围：八、九、 十二、十三章。</p>
+</blockquote>
+<h2 id="图像标签"><a href="#图像标签" class="headerlink" title="图像标签"></a>图像标签</h2><p>图片让网页变得丰富多彩，图片类的标签有很多，但最核心的当属 <code>img</code> 标签，因此本文只介绍 <code>img</code> 标签的常用属性和用法，更详细的的介绍请看：<a href="http://wangdoc.com/html/image.html" target="_blank" rel="noopener">HTML 教程-图像标签</a>。</p>
+<h3 id="img-标签"><a href="#img-标签" class="headerlink" title="img 标签"></a><code>img</code> 标签</h3><p><code>img</code> 标签是一个<strong>自闭合、内联、替换</strong>标签（元素）。它会发送一个 <code>GET</code> 请求，获取成功后，将展示一张图片。</p>
+<pre><code class="HTML">&lt;!--
+
+  自闭合： 它没有 &lt;img&gt;&lt;/img&gt; 而是 &lt;img&gt; 或者 &lt;img /&gt;。一般使用 &lt;img /&gt; 其他自闭合标签类似。
+  内联：它不会自动换行，后面如果有文字的话，会继续跟在后面
+  替换: 获取到图片后，img 标签内容被替换成图片，并且标签的宽高，默认就是图片本身的宽高。
+--&gt;
+&lt;!--  img 一般需要 src 和 alt 属性 --&gt;
+&lt;img src=&quot;dog.png&quot; alt=&quot;狗子&quot;&gt;狗子就在我旁边</code></pre>
+<ul>
+<li>常用属性：<br><code>scr</code>： 用于指定图片的地址，可以是一个网页链接，也可以是一个路径（相对或绝对）。<br><code>alt</code>： 用于图片加载失败后的提示性，或者文本阅读器的读取。<br><code>width、 height</code>： 宽高，一般不使用。现在都采用 CSS 设置 宽高，而不是直接在 html 中设置。</li>
+<li>事件：<ul>
+<li><code>onload</code>： 加载成功，执行回调函数。</li>
+<li><code>onerror</code>: 加载失败，执行回调函数。</li>
+</ul>
+</li>
+<li>简单的响应式：<br>在 CSS 进行 img 的样式设置 <code>max-width</code> 属性。</li>
+<li>注意：<br>如果 <code>img</code> 标签只显式声明了宽或高，那么图片会自动适应自身比例，<strong>记住永远不要让图片发生变形，比如同时设置宽高，导致图片比例不对。</strong></li>
+</ul>
+<pre><code class="HTML">&lt;head&gt;
+  &lt;style&gt;
+    img {
+      max-width: 100%;
+
+      /* 如果 CSS 和 HTML 都出现 width 或 height，那么 CSS 的样式优先级更高*/
+      /* 最好不要同时写 width height */
+      width: 400px;
+      /* height: 100px; */
+    }
+  &lt;/style&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;img id=&quot;dog&quot; src=&quot;dog.png&quot; alt=&quot;狗子&quot; width=&quot;200&quot; /&gt;
+
+  &lt;script&gt;
+    let dogNode = document.getElementById(dog);
+    dogNode.onload = function() {
+      console.log(&#39;图片加载成功&#39;);
+
+      // 其他操作
+    }
+    dogNode.onerror = function() {
+      console.log(&#39;图片加载失败&#39;);
+      // 其他操作
+      // 可以做一下补救措施，比如设置一个 预设图片
+      dogNode.src = &#39;404.png&#39;;
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h2 id="链接标签"><a href="#链接标签" class="headerlink" title="链接标签"></a>链接标签</h2><p>互联网的核心在于链接（hyperlink），这样资源就能够链接到一起。所有互联网上的资源都能通过链接访问。</p>
+<p>链接标签有 <code>a</code>、<code>link</code>、<code>script</code> 标签，但本文只介绍 <code>a</code> 标签的常用属性和用法，更详细的的介绍请看：<a href="http://wangdoc.com/html/link.html" target="_blank" rel="noopener">HTML 教程-链接标签</a>。</p>
+<h3 id="a-标签"><a href="#a-标签" class="headerlink" title="a 标签"></a>a 标签</h3><p><code>a</code> 标签的基本属性：</p>
+<ul>
+<li><code>href</code>: 链接引用（hyperlink reference），有四类属性值:<ul>
+<li>锚点： 能够定位到该页面上面的元素。<pre><code class="HTML">&lt;a href=&quot;#para&quot;&gt;点击定位&lt;/p&gt;
+&lt;!-- 省略很多行内容 -&gt;
+&lt;p id=&quot;para&quot;&gt;&lt;/p&gt;</code></pre>
+</li>
+<li>网址：一个 URL 链接。<pre><code class="HTML">&lt;!-- https 协议的链接 --&gt;
+&lt;a href=&quot;https://baidu.com&quot;&gt; 跳转到百度页面 &lt;/a&gt;
+&lt;!-- http 协议的链接 --&gt;
+&lt;a href=&quot;http://baidu.com&quot;&gt; 跳转到百度页面 &lt;/a&gt;
+&lt;!-- 无协议的链接， 推荐，浏览器会自动进行配置 --&gt;
+&lt;a href=&quot;//baidu.com&quot;&gt; 跳转到百度页面 &lt;/a&gt;</code></pre>
+</li>
+<li>路径： 可以是绝对路径， 或者相对路径。<pre><code class="HTML">&lt;!-- 假如当前网页是 sanshi.com/x/y/index.html --&gt;
+&lt;!-- 绝对路径 --&gt;
+&lt;a href=&quot;sanshi.com/a/b/c.html&quot;&gt;&lt;/a&gt;
+&lt;!-- 相对路径 --&gt;
+&lt;a href=&quot;../index.html&quot;&gt;&lt;/a&gt;</code></pre>
+</li>
+<li>伪协议: 可以执行一些额外的操作，常用的有三种：<ul>
+<li>JavaScript 伪协议。<pre><code class="HTML">&lt;!-- JavaScript 伪协议 --&gt;
+&lt;a href=&quot;javascript:alert(1);&quot;&gt;JavaScript 伪协议&lt;/a&gt;
+&lt;!-- 点击之后没有动作的伪协议 即不会跳转页面 --&gt;
+&lt;a href=&quot;javascript:void(0);&quot;&gt;没有动作的JavaScript伪协议&lt;/a&gt;</code></pre>
+</li>
+<li>mailto 伪协议。<pre><code class="HTMl">&lt;!-- 邮箱 --&gt;
+&lt;a href=&quot;mailto:sanshiliu@foxmail.com&quot;&gt;mailto 伪协议&lt;/a&gt;</code></pre>
+</li>
+<li>tel 伪协议。<pre><code class="HTMl">  &lt;!-- 手机号， 常用在手机唤起电话  --&gt;
+  &lt;a href=&quot;tel:13856728791;&quot;&gt;tel 伪协议&lt;/a&gt;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>target</code>: 指定如何展示打开的链接，属性值分为两类，一类是 内置的属性值，一类是自定义的属性值（一个名字）:<ul>
+<li>内置属性值：<ul>
+<li><code>_self</code>： 默认当前页面打开。</li>
+<li><code>_blank</code>： 新页面打开。</li>
+<li><code>_parent</code>: 父级窗口打开，如果没有，等同于 <code>_self</code>。 一般在 嵌套的 <code>iframe</code> 标签下的 <code>a</code> 标签中用到。</li>
+<li><code>_top</code>: 顶层窗口，如果没有，等同于 <code>_self</code>，一般在 嵌套的 <code>iframe</code> 标签下的 <code>a</code> 标签中用到。</li>
+</ul>
+</li>
+<li>自定义属性值：<ul>
+<li>window 的 name 名字。</li>
+<li>iframe 的 name 名字。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>rel</code>: 说明链接与当前页面的关系。常用的一些属性值：<ul>
+<li><code>noreferrer</code>: 浏览器打开链接时，不要将当前网址作为 HTTP 头信息的 Referer 字段发送出去，这样可以隐藏点击的来源。</li>
+<li><code>noopener</code>：打开链接时，不让链接窗口通过 JavaScript 的 window.opener 属性引用原始窗口，这样就提高了安全性。<br>通常和 <code>noreferrer</code> 连用，参考文章：<a href="https://juejin.im/post/5950f387f265da6c44072d6c" target="_blank" rel="noopener">聊聊 rel=noopener</a>。</li>
+</ul>
+</li>
+</ul>
+<p><img src="/notebook/HTML/20190818-HTML其他常用标签/1.gif" alt></p>
+<h2 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h2><p>表格（table）以行（row）和列（column）的形式展示数据。表格类的标签和属性有很多，这里也只介绍常用的表格的用法，更详细的介绍请看：<a href="http://wangdoc.com/html/table.html" target="_blank" rel="noopener">HTML 教程-表格标签</a>。</p>
+<p>一个标准常用的表格样式：</p>
+<pre><code class="HTML">&lt;!--
+  caption 表格的标题
+  thead 表格的表头
+  tbody 表格主体
+  tfoot 表格的尾部
+  tr 表示表格的一行（table row）
+  th 表示表头单元格（table header）
+  td 表示数据单元格（table data）
+--&gt;
+&lt;table&gt;
+  &lt;caption&gt;&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+<p>表格的几个关键的 CSS 属性：</p>
+<pre><code class="HTML">&lt;style&gt;
+  table {
+    /* table 的 布局算法 */
+    table-layout: auto;
+
+    /* 是否合并表格边框 */
+    border-collapse: collapse;
+
+    /* border 与 border 之间的距离 */
+
+    border-spacing: 0;
+
+  }
+  td, th {
+    border: 1px solid blue;
+  }
+&lt;/style&gt;</code></pre>
+<p><img src="/notebook/HTML/20190818-HTML其他常用标签/2.gif" alt></p>
+<p><strong>注意事项</strong>：</p>
+<ol>
+<li><code>&lt;caption&gt;</code>、<code>&lt;thead&gt;</code>、<code>&lt;tfoot&gt;</code> 都是可选的，但 <code>tbody</code> 必须要有（如果没有，浏览器会自动补上）。</li>
+<li>表头不仅仅只能具有一行，也可以有多行，写法需要注意一下（下图）。</li>
+<li>大型表格内部可以使用多个 <code>tbody</code>，表示连续的多个部分。</li>
+</ol>
+<p><img src="/notebook/HTML/20190818-HTML其他常用标签/3.png" alt></p>
+<h2 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h2><p>表单（form）是用户输入信息与网页互动的一种形式。大多数情况下，用户提交的信息会发给服务器，比如网站的搜索栏就是表单。同样，更相信的介绍请看：<a href="http://wangdoc.com/html/form.html" target="_blank" rel="noopener">HTML 教程-表单标签</a>。</p>
+<h3 id="form-标签"><a href="#form-标签" class="headerlink" title="form 标签"></a>form 标签</h3><p><code>form</code> 标签用来定义一个表单，所有表单里面的内容都放在这个容器里面。该标签的常用属性：</p>
+<ul>
+<li><code>action</code>： 服务器接收数据的 URL， 一般由后端提供 URL。</li>
+<li><code>method</code>： 提交数据的方法，一般有 <code>GET</code> 和 <code>POST</code>。</li>
+<li><code>autocomplete</code>：自动补全提示，属性值为 <code>on</code> 或者 <code>off</code>，需要控件具有 <code>name</code> 属性才有可能补全。</li>
+<li><code>target</code>： 和 <code>a</code> 标签的 <code>target</code> 属性类似， 表示在哪个窗口展示服务器返回的数据。</li>
+<li><code>enctype</code>： 当 <code>method</code> 为 <code>POST</code> 时，指定提交给服务器的 MIME 类型，默认为 <code>application/x-www-form-urlencoded</code>。</li>
+<li><code>name</code>： 表单的名称，网页中一个表单只有唯一一个名称。</li>
+</ul>
+<p><code>form</code> 标签还有一个事件<code>onsubmit</code>，提交表单时会触发该事件。</p>
+<p>注意，一个表单里面必须要有一个属性值为 <code>type=&quot;submit&quot;</code>（input 标签或者 <code>button</code>）的提交按钮。</p>
+<pre><code class="HTML">&lt;!-- form 常用的四种属性 其中 action 和 method 是必须的 --&gt;
+&lt;form action=&quot;https://example.com/api&quot;
+      enctype=&quot;multipart/form-data&quot;
+      name=&quot;fileForm&quot;
+      method=&quot;post&quot;&gt;
+  用户名：&lt;input type=&quot;textname=&quot;submit-name&quot;&gt;&lt;br&gt;
+  文件：&lt;input type=&quot;file&quot; name=&quot;files&quot;&gt;&lt;br&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;上传&quot;&gt; &lt;br&gt;
+  &lt;input type=&quot;reset&quot; value=&quot;清除&quot;&gt;
+&lt;/form&gt;</code></pre>
+<h3 id="input-标签"><a href="#input-标签" class="headerlink" title="input 标签"></a>input 标签</h3><p><code>input</code> 标签用于接收用户的输入，是一个自闭合、内联标签。</p>
+<p><code>input</code> 标签的常用属性：</p>
+<ul>
+<li><code>autofocus</code>： 布尔属性，页面加载时自动获取焦点，注意只能设置一个控件的焦点。</li>
+<li><code>disabled</code>：布尔属性，表示是否禁用该控件。</li>
+<li><code>required</code>： 布尔属性，控件是否为必填。</li>
+<li><code>name</code>：控件的名称，主要用于向服务器提交数据时，控件键值对的键名。<br>注意，只有设置了 name 属性的控件，才会向服务器提交，不设置就不会提交。</li>
+<li><code>type</code>: 控件的类型， <code>input</code> 控件有很多的类型， 如 <code>text</code>、<code>submit</code>、<code>radio</code>等。</li>
+<li><code>value</code>： 控件的值。</li>
+</ul>
+<pre><code class="HTML">      &lt;!-- 文本输入 --&gt;
+      &lt;input type=&quot;text&quot; name=&quot;username&quot; /&gt;
+      &lt;hr /&gt;
+      &lt;!-- password 类型 输入字符之后，会变成小圆点 --&gt;
+      &lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt;
+      &lt;hr /&gt;
+      &lt;!-- 搜索框 --&gt;
+      &lt;input type=&quot;search&quot;&gt;
+      &lt;hr /&gt;
+      &lt;!-- 颜色选择 --&gt;
+      &lt;input type=&quot;color&quot; name=&quot;color&quot; /&gt;
+      &lt;hr /&gt;
+      &lt;!-- 文件上传 --&gt;
+      &lt;input type=&quot;file&quot; name=&quot;oneFile&quot; /&gt;
+      &lt;hr /&gt;
+      &lt;hr /&gt;
+      &lt;!-- 单选， 需要设置 同一个 name --&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;man&quot; /&gt; 男
+      &lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;woman&quot; /&gt; 女
+      &lt;hr /&gt;
+      &lt;!-- 多选， 需要设置同一个 name 表示一组 --&gt;
+      &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;sing&quot; /&gt; 唱
+      &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;jump&quot; /&gt; 跳
+      &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;rap&quot; /&gt; Rap
+      &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;play basketball&quot; /&gt; 打篮球
+      &lt;hr /&gt;
+      &lt;!-- 提交按钮 --&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;点我提交&quot; /&gt;</code></pre>
+<h3 id="label-标签"><a href="#label-标签" class="headerlink" title="label 标签"></a>label 标签</h3><p><code>label</code> 标签主要为控件提供文字说明，帮助用户理解控件的目的。主要有两个属性：</p>
+<ul>
+<li><code>for</code>：关联控件的id属性。</li>
+<li><code>form</code>：关联表单的id属性。设置了该属性后，<code>label</code>标签可以放置在页面的任何位置，否则只能放在<code>form</code> 标签内部。</li>
+</ul>
+<pre><code class="HTML">&lt;!-- label 使用 for 属性 和 input 使用 id 属性 表明它们是一起的 --&gt;
+&lt;label for=&quot;user&quot;&gt;用户名：&lt;/label&gt;
+&lt;input type=&quot;text&quot; name=&quot;user&quot; id=&quot;user&quot;&gt;
+
+&lt;!-- 如果直接包裹，则可以不需要 for 和 id 属性 --&gt;
+&lt;label&gt;用户名：
+  &lt;input type=&quot;text&quot; name=&quot;user&quot;&gt;
+  这里也可以有内容
+&lt;/label&gt;
+
+&lt;!-- 一个 控件 还可以有多个关联的 label --&gt;
+&lt;label for=&quot;username&quot;&gt;用户名：&lt;/label&gt;
+&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;
+&lt;label for=&quot;username&quot;&gt;神奇吧！！！&lt;/label&gt;</code></pre>
+<h3 id="textarea"><a href="#textarea" class="headerlink" title="textarea"></a>textarea</h3><p><code>textarea</code> 标签用来生成多行文本框。该标签有以下常用的属性：</p>
+<ul>
+<li><code>autofocus</code>： 是否自动获取到该控件的焦点。</li>
+<li><code>disabled</code>: 布尔属性，是否禁用。</li>
+<li><code>required</code>：布尔属性，控件是否为必填。</li>
+<li><code>name</code>： 控件的名称。</li>
+<li><code>cols</code>: 文本框的宽度，单位是字符，默认值 20。</li>
+<li><code>rows</code>： 文本框高度，单位为行。</li>
+<li><code>maxlength</code>： 允许输入的最大字符数，如果未指定，则可以输入无限个字符。</li>
+<li><code>minlength</code>： 允许输入的最小字符数。</li>
+</ul>
+<pre><code class="HTML">&lt;textarea id=&quot;story&quot; name=&quot;story&quot;
+          rows=&quot;5&quot; cols=&quot;33&quot; maxlength=&quot;120&quot;&gt;
+          可以有一些已经写好的内容。
+&lt;/textarea&gt;</code></pre>
+<h3 id="select、option"><a href="#select、option" class="headerlink" title="select、option"></a>select、option</h3><p><code>select</code> 标签用于生成一个下拉选择框，常和 <code>option</code> 标签连用。</p>
+<p><code>select</code> 标签常用属性：</p>
+<ul>
+<li><code>autofocus</code>：布尔属性，页面加载时是否自动获得焦点。</li>
+<li><code>disabled</code>：布尔属性，是否禁用当前控件。</li>
+<li><code>required</code>：布尔属性，是否为必填控件。</li>
+<li><code>multiple</code>：布尔属性，是否可以选择多个菜单项。默认情况下，只能选择一项。一旦设置，多数浏览器会显示一个滚动列表框。用户可能需要按住Shift或其他功能键，选中多项。</li>
+<li><code>name</code>：控件名。</li>
+<li><code>size</code>：设置了multiple属性时，页面显示时一次可见的行数，其他行需要滚动查看。</li>
+</ul>
+<p><code>option</code> 标签常用属性：</p>
+<ul>
+<li><code>disabled</code>：布尔属性，是否禁用该项。</li>
+<li><code>selected</code>：布尔属性，是否为默认值。显然，一组菜单中，只能有一个菜单项设置该属性。</li>
+<li><code>value</code>：该项提交到服务器的值。如果省略，则等于该项的文本内容。</li>
+</ul>
+<pre><code class="HTML">
+&lt;select name=&quot;choice&quot;&gt;
+  &lt;!-- 一般都会设置一个 value=&quot;&quot; 的 选项 --&gt;
+  &lt;option value=&quot;&quot;&gt;- 请选择 -&lt;/option&gt;
+  &lt;option value=&quot;first&quot;&gt; 第一个 &lt;/option&gt;&#39;
+  &lt;!-- 有 selected 属性， 表示 默认选中该选项 --&gt;
+  &lt;option value=&quot;second&quot; selected&gt;第二个&lt;/option&gt;
+  &lt;option value=&quot;third&quot;&gt;第三个&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+</div></div><div class="post-art-warpper"><div class="post-art"><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-client="ca-pub-9441161448418285" data-ad-layout="in-article" data-ad-format="fluid" data-ad-slot="6860833347"></ins><script>setTimeout(() => {
+  try{
+    (adsbygoogle = window.adsbygoogle || []).push({})
+  } catch {
+    let dom = document.querySelector('.post-art-warpper');
+    dom.classList.add('hide-art')
+  }
+}, 3000)</script></div></div></article></div><div id="gitalk"></div><script>var gitalk = new Gitalk({
+    clientID: '921d6f0be7c36e212658',
+    clientSecret: '2614ce5f405d03d99d9b76da0dc0a6f75b376bd9',
+    id: '2019-08-18 10:24:02',
+    repo: 'comments',
+    owner: 'sanshiliuxiao',
+    admin: 'sanshiliuxiao'
+})
+gitalk.render('gitalk')</script></div><div class="pjax-main-loading loading"><img class="loading-image" src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/loading.gif"></div></main><footer><div class="footer site-info"><p><i class="icon-copyright"></i><span>2018</span>&minus;<span>2020</span>&nbsp;&nbsp;&nbsp;<i class="icon-heart"></i>&nbsp;&nbsp;<span>椎咲良田</span></p><p><a href="https://github.com/sanshiliuxiao/hexo-theme-aurora.git" target="_blank">hexo-theme-Aurora</a>&nbsp; | &nbsp;快走吧 趁风停止之前</p></div></footer></div><div class="bg"><div class="pc-dynamic-bg"><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/1.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/2.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/3.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/4.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/5.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/6.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/7.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/8.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/9.jpg"></span></div></div><span class="back-to-top"></span><div class="leancloud"><script src="/js/third-party/leancloud.min.js?version=2.0.0"></script><div class="leancloud-app-id" leancloud-app-id="QAIKomD08e9fmVRQP4tkzUDf-MdYXbMMI"></div><div class="leancloud-app-key" leancloud-app-key="vi0TViY0HvYocUR3HxKGd1l9"></div><div class="leancloud-app-hot"></div><div class="leancloud-app-visitor"></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/lib/APlayer/APlayer.min.css"><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/lib/APlayer/APlayer.min.js"></script><div id="aplayer"></div><script>let list = JSON.parse('[{"name":"Once more","artist":"阿保剛","url":"https://files.catbox.moe/13boxb.mp3","cover":"https://i.loli.net/2019/04/18/5cb87157c617e.jpg"},{"name":"All or None","artist":"阿保剛","url":"https://files.catbox.moe/4x69y9.mp3","cover":"https://i.loli.net/2019/04/18/5cb87157b537a.jpg"},{"name":"Karma","artist":"阿保剛","url":"https://files.catbox.moe/r5dsuh.mp3","cover":"https://i.loli.net/2019/04/18/5cb871583cfb7.jpg"},{"name":"星の奏でる歌","artist":"阿保剛","url":"https://files.catbox.moe/m1wd57.mp3","cover":"https://i.loli.net/2019/04/18/5cb871585123b.jpg"}]')
+  const ap = new APlayer({
+      container: document.getElementById('aplayer'),
+      theme: '#b28fce',
+      audio: list,
+      fixed: true
+  });
+  ap.list.show()
+</script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/isMobile.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/timeago.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/pjax.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/zooming.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/backstretch.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/highlight.min.js"></script><script src="/js/index.js?version=2.0.0"></script></body></html>

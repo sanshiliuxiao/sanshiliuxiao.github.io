@@ -1,0 +1,202 @@
+<!DOCTYPE html><html lang="ZH-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="referrer" content="no-referrer"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="author" content="椎咲良田"><meta name="copyright" content="椎咲良田"><meta name="og:image" content="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/avatar.jpg"><meta name="og:type" content="website"><meta name="og:site_name" content="椎咲良田"><meta name="og:url" content="sanshiliuxiao.top"><meta name="og：title" content="椎咲良田"><meta name="theme-color" content="#b854d4"><title>椎咲良田</title><link rel="canonical" href="//sanshiliuxiao.top"><link rel="dns-prefetch" href="//cdn.jsdelivr.net"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/favicon.jpg" type="image/x-icon"><link rel="stylesheet" href="/css/index.css?version=2.0.0"><link rel="stylesheet" href="/font/fontello.css?version=2.0.0"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira+Mono|Noto+Serif+SC&amp;amp;display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/lib/gitalk/gitalk.min.css"><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/lib/gitalk/gitalk.min.js"></script></head><body><div class="layout"><header><div class="header"><div class="mobile-bg" style="background-image:url(https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/mobile.png);"></div><h1 class="title">椎咲良田</h1><h2 class="subtitle">快走吧 趁风停止之前</h2><nav class="menu"><a class="menu-item pjax-main-link" href="/"><li><i class="icon-index"></i><span>首页</span></li></a><a class="menu-item pjax-main-link" href="/archives/"><li><i class="icon-archives"></i><span>归档</span></li></a><a class="menu-item pjax-main-link" href="/categories/"><li><i class="icon-categories"></i><span>分类</span></li></a><a class="menu-item pjax-main-link" href="/tags/"><li><i class="icon-tags"></i><span>标签</span></li></a><a class="menu-item pjax-main-link" href="/books/"><li><i class="icon-books"></i><span>书单</span></li></a><a class="menu-item pjax-main-link" href="/inspirations/"><li><i class="icon-inspiration"></i><span>灵感</span></li></a><a class="menu-item pjax-main-link" href="/friends/"><li><i class="icon-friends"></i><span>友链</span></li></a><a class="menu-item pjax-main-link" href="/about/"><li><i class="icon-about"></i><span>关于</span></li></a></nav></div></header><main><div class="main-wrapper"></div><div class="pjax-main-page"><div class="post"><article class="post-article"><div class="post-header"><img class="default-image" src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/postDefaultImage .png"><div class="post-head"><div class="post-title-wrapper"><h1 class="post-title">标签的全局属性和字符编码</h1></div><div class="post-meta"><span class="post-date"><i class="icon-calendar"></i><span class="date timeago" datetime="2019-08-16T09:51:30.000Z"></span></span><span class="post-hot"><i class="icon-fire"></i><span class="leancloud_visitors" id="/notebook/HTML/20190816-标签的全局属性和字符编码/" data-flag-title="标签的全局属性和字符编码">热度<span class="leancloud-visitors-count">0</span>℃</span></span><span class="post-tags"><i class="icon-tag"></i><span class="tag">HTML</span></span><span class="post-categories"><i class="icon-bookmark-empty"></i><span class="category">笔记本</span></span></div></div></div><div class="post-content"><div class="markdown"><blockquote>
+<p>阮一峰老师的 <a href="http://wangdoc.com/html/index.html" target="_blank" rel="noopener">HTML 教程</a><br>本文属于笔记性质，内容大部分出于上述教程，但会对内容进行组织，精简。<br>范围：三、四章节。</p>
+</blockquote>
+<h2 id="全局属性"><a href="#全局属性" class="headerlink" title="全局属性"></a>全局属性</h2><p>属性的一些特性：</p>
+<ol>
+<li>属性名和标签名一样，不区分大小写。</li>
+<li>属性名和属性值，通过 等号 (<code>=</code>) 连接。</li>
+<li>属性值可以放在单双引号之中，甚至有些属性值可以不使用引号，单强烈建议统一使用双引号。</li>
+<li>有些属性属于布尔属性，即属性值就是一个布尔值。</li>
+</ol>
+<p>在 HTML 中的属性（attribute）可以定制元素的行为，有一些属性是所有的标签都支持的，于是也称为<strong>全局属性</strong>。下面记录一些最常用的全局属性。</p>
+<h3 id="id"><a href="#id" class="headerlink" title="id"></a>id</h3><p><code>id</code> 属性表示网页中唯一标识符，通常每个元素的 <code>id</code> 唯一， 但是想多个元素写 <code>id</code> 也不是不行，但强烈不建议。<code>id</code> 元素具有定位锚点的作用，在 url 中 以 <code>#p1</code> 形式添加在最后，页面会自动定位到该元素在网页内部的位置。</p>
+<pre><code class="html">&lt;p id=&quot;p1&quot;&gt;&lt;/p&gt;
+&lt;p id=&quot;p2&quot;&gt;&lt;/p&gt;
+&lt;p id=&quot;p3&quot;&gt;&lt;/p&gt;
+
+&lt;!-- 强烈不推荐下面的写法 --&gt;
+&lt;p id=&quot;p4&quot;&gt;&lt;/p&gt;
+&lt;p id=&quot;p5&quot;&gt;&lt;/p&gt;
+&lt;p id=&quot;p4&quot;&gt;&lt;/p&gt;</code></pre>
+<h3 id="class"><a href="#class" class="headerlink" title="class"></a>class</h3><p><code>class</code> 属性表示对网页元素进行分类，<code>class</code> 的属性值相同，那么它们属于同一类。</p>
+<pre><code class="html">&lt;p class=&quot;para&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p class=&quot;para&quot;&gt;&lt;/p&gt;
+
+&lt;!-- 允许一个元素具有多个 class --&gt;
+&lt;p class=&quot;xx yy zz&quot;&gt;&lt;/p&gt;</code></pre>
+<h3 id="title"><a href="#title" class="headerlink" title="title"></a>title</h3><p><code>title</code> 属性为元素添加附加说明，当鼠标悬浮到元素上面， <code>title</code> 属性值可作为浮动提示。</p>
+<pre><code class="html">&lt;div title=&quot;版权说明&quot;&gt;
+  &lt;p&gt;本站内容使用创意共享许可证，可以自由使用。&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<h3 id="tabindex"><a href="#tabindex" class="headerlink" title="tabindex"></a>tabindex</h3><p>浏览器允许使用 Tab 键遍历网页， <code>tabindex</code>属性的作用是给定元素遍历的顺序。<br>它的属性值分为三类：</p>
+<ul>
+<li>负整数： 该元素可以使用 JS 的 <code>focus</code> 方法获取焦点，但不参与 Tab 键对网页的遍历，通常值为 <code>-1</code>。</li>
+<li><code>0</code>：参与 Tab 键的遍历，顺序由浏览器指定，一般最后才参与遍历。</li>
+<li>正整数：网页元素按照从小到大的顺序参与遍历，如果多个元素的 <code>tabindex</code> 属性值相同，则按照网页源码中出现的顺序进行遍历。</li>
+</ul>
+<p><img src="/notebook/HTML/20190816-标签的全局属性和字符编码/1.gif" alt></p>
+<h3 id="accesskey"><a href="#accesskey" class="headerlink" title="accesskey"></a>accesskey</h3><p><code>accesskey</code> 属性指定网页获得焦点的快捷键，属性值是单个可打印的字符，但需要配合功能键才能生效。比如 Chrome 浏览器，在 Windows 和 Linux 系统的快捷键是 <code>Alt + 字符键</code>，在 <code>Ctrl + Alt + 字符键</code>。</p>
+<p>如果和操作系统或者浏览器级别的快捷键有冲突，则不生效，<strong>该属性用的比较少。</strong></p>
+<pre><code class="html">&lt;!-- Chrome  Windows 按 Alt 和 s 触发。 --&gt;
+
+&lt;button accesskey=&quot;s&quot;&gt;提交&lt;/button&gt;</code></pre>
+<h3 id="style"><a href="#style" class="headerlink" title="style"></a>style</h3><p><code>class</code> 属性表示对网页元素进行分类，<code>class</code> 的属性值相同，那么它们属于同一类。</p>
+<pre><code class="html">&lt;p class=&quot;para&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p class=&quot;para&quot;&gt;&lt;/p&gt;
+
+&lt;!-- 允许一个元素具有多个 class --&gt;
+&lt;p class=&quot;xx yy zz&quot;&gt;&lt;/p&gt;</code></pre>
+<h3 id="hidden"><a href="#hidden" class="headerlink" title="hidden"></a>hidden</h3><p><code>hidden</code> 属性是一个<strong>布尔属性</strong>，表示当前元素不再跟页面相关，浏览器不会渲染这个元素。</p>
+<p>设置 <code>hidden</code> 属性，其实是设置了<code>display: none</code>，因此可以使用 CSS 进行覆盖。</p>
+<pre><code class="html">&lt;p hidden&gt;本局不会出现在页面上&lt;/p&gt;</code></pre>
+<p><img src="/notebook/HTML/20190816-标签的全局属性和字符编码/2.png" alt></p>
+<h3 id="lang-dir"><a href="#lang-dir" class="headerlink" title="lang, dir"></a>lang, dir</h3><ul>
+<li><p>lang<br><code>lang</code> 属性指定网页元素所使用的语言</p>
+<pre><code class="html">&lt;!-- 一般这样使用 --&gt;
+&lt;html lang=&quot;en&quot;&gt;&lt;/html&gt;
+
+&lt;!-- 单元素使用 --&gt;
+&lt;p lang=&quot;en&quot;&gt;hello&lt;/p&gt;
+&lt;p lang=&quot;zh&quot;&gt;你好&lt;/p&gt;</code></pre>
+<p><code>lang</code> 的属性值， 必须符合 <a href="https://www.ietf.org/rfc/bcp/bcp47.txt" target="_blank" rel="noopener">BCP47 标准</a>，常用的一些语言代码有：</p>
+<table>
+<thead>
+<tr>
+<th align="center">代码</th>
+<th align="center">含义</th>
+<th align="center">代码</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">zh</td>
+<td align="center">中文</td>
+<td align="center">zh-Hans</td>
+<td align="center">简体中文</td>
+</tr>
+<tr>
+<td align="center">zh-Hant</td>
+<td align="center">繁体中文</td>
+<td align="center">en</td>
+<td align="center">英语</td>
+</tr>
+<tr>
+<td align="center">en-US</td>
+<td align="center">美国英语</td>
+<td align="center">en-GB</td>
+<td align="center">英国英语</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>dir<br><code>dir</code> 属性表示文字的阅读方向，有三种属性值。 - <code>ltr</code>：从左往右阅读， 如 英语。 - <code>rtl</code>： 从右往左阅读，如 阿拉伯语。 - <code>auto</code>： 浏览器根据内容解析，自行决定。</p>
+</li>
+</ul>
+<h3 id="contenteditable"><a href="#contenteditable" class="headerlink" title="contenteditable"></a>contenteditable</h3><p>网页的内容默认是用户不能编辑的，<code>contenteditable</code> 属性允许用户修改内容。</p>
+<p>它有两种属性值：</p>
+<ul>
+<li><code>true</code>或空字符串：内容可以编辑。</li>
+<li><code>false</code>：内容不可编辑。</li>
+</ul>
+<p><strong>注意这个属性属于枚举属性，而不是布尔属性，最好带上属性值。</strong></p>
+<pre><code class="html">&lt;p contenteditable=&quot;true&quot;&gt;
+  鼠标点击内容块，本句内容可修改。
+&lt;/p&gt;</code></pre>
+<p><img src="/notebook/HTML/20190816-标签的全局属性和字符编码/3.gif" alt></p>
+<h3 id="spellcheck、其他"><a href="#spellcheck、其他" class="headerlink" title="spellcheck、其他"></a>spellcheck、其他</h3><ul>
+<li><p>spellcheck</p>
+<p><code>spellcheck</code>属性表示是否打开浏览器自带的拼写检查功能，如果开启并且编辑内容时单词出错，则会有红色波浪线。<strong>这个属性基本没用了。</strong>，和 <code>contenteditable</code>属性一样它具有两个属性值 <code>true</code> 和 <code>false</code></p>
+</li>
+<li><p>事件处理属性</p>
+<p>除去上面的属性，还有事件处理属性（event handle），用于响应用户的动作。不过目前，大多数情况下，都是在 JavaScript 文件里面进行事件的监听处理，很少直接在 HTML 代码中混入 JS 代码。</p>
+<blockquote>
+<p>onabort, onautocomplete, onautocompleteerror, onblur, oncancel, oncanplay, oncanplaythrough, onchange, onclick, onclose, oncontextmenu, oncuechange, ondblclick, ondrag, ondragend, ondragenter, ondragexit, ondragleave, ondragover, ondragstart, ondrop, ondurationchange, onemptied, onended, onerror, onfocus, oninput, oninvalid, onkeydown, onkeypress, onkeyup, onload, onloadeddata, onloadedmetadata, onloadstart, onmousedown, onmouseenter, onmouseleave, onmousemove, onmouseout, onmouseover, onmouseup, onmousewheel, onpause, onplay, onplaying, onprogress, onratechange, onreset, onresize, onscroll, onseeked, onseeking, onselect, onshow, onsort, onstalled, onsubmit, onsuspend, ontimeupdate, ontoggle, onvolumechange, onwaiting</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码"></a>字符编码</h2><p>浏览器必须指定文字的编码方式，才能够正确的把文字还原处理，目前网页中广泛使用的是 <code>UTF-8</code> 编码。</p>
+<p>一般情况，服务器向浏览器发送 HTML 文件时，通过 HTTP 头信息，申明网页的编码方法。</p>
+<pre><code class="http">Content-Type: text/html; charset=UTF-8</code></pre>
+<p>网页的内部会使用 <code>meta</code> 标签，声明网页的编码。</p>
+<pre><code class="html">&lt;meta charset=&quot;UTF-8&quot; /&gt;</code></pre>
+<p>UTF-8 是 Unicode 字符集的一种表达方式， Unicode 字符集的目标是包含世界上的所有字符。</p>
+<p>Unicode 在 HTML 中的四个问题：</p>
+<ol>
+<li>有些字符没有打印形式。</li>
+<li>小于号（<code>&lt;</code>）和 大于号（<code>&gt;</code>）用于定义 HTML 标签，不能直接使用。</li>
+<li>Unicode 字符太多，没有一种键盘可以输入所有字符。</li>
+<li>网页不允许混用多种编码。</li>
+</ol>
+<p>HTML 为了解决这些问题，允许使用 Unicode 码点来表示字符，由浏览器自动将码点转化成对应的字符。码点的表示可以由十进制（不常用）或者十六进制（常用）来表示。</p>
+<pre><code class="html">&lt;p&gt;hello&lt;/p&gt;
+&lt;!-- 等价 --&gt;
+&lt;p&gt;&amp;#104;&amp;#101;&amp;#108;&amp;#108;&amp;#111;&lt;/p&gt;
+&lt;!-- 等价 --&gt;
+&lt;p&gt;&amp;#x68;&amp;#x65;&amp;#x6c;&amp;#x6c;&amp;#x6f;&lt;/p&gt;</code></pre>
+<p>同时，因为直接使用码点（也即数字表示法）过于麻烦，难以记忆，所以为了能够快速输入，HTML 专门为一些特殊字符，规定了一些容易记忆的名字，称为实体表示法（<code>entity</code>），<a href="https://dev.w3.org/html5/html-author/charref" target="_blank" rel="noopener">全部的字符实体</a>。</p>
+<p>比较常用的一些字符实体：</p>
+<table>
+<thead>
+<tr>
+<th align="center">字符</th>
+<th align="center">实体</th>
+<th align="center">字符</th>
+<th align="center">实体</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>&lt;</code></td>
+<td align="center"><code>&amp;lt;</code></td>
+<td align="center"><code>&gt;</code></td>
+<td align="center"><code>&amp;gt;</code></td>
+</tr>
+<tr>
+<td align="center"><code>&quot;</code></td>
+<td align="center"><code>&amp;quot;</code></td>
+<td align="center"><code>&#39;</code></td>
+<td align="center"><code>&amp;apos;</code></td>
+</tr>
+<tr>
+<td align="center"><code>&amp;</code></td>
+<td align="center"><code>&amp;amp;</code></td>
+<td align="center"><code>©</code></td>
+<td align="center"><code>&amp;copy;</code></td>
+</tr>
+<tr>
+<td align="center"><code>#</code></td>
+<td align="center"><code>&amp;num;</code></td>
+<td align="center"><code>@</code></td>
+<td align="center"><code>&amp;commat;</code></td>
+</tr>
+<tr>
+<td align="center"><code>^</code></td>
+<td align="center"><code>&amp;Hat;</code></td>
+<td align="center">空格</td>
+<td align="center"><code>&amp;nbsp;</code></td>
+</tr>
+</tbody></table>
+</div></div><div class="post-art-warpper"><div class="post-art"><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-client="ca-pub-9441161448418285" data-ad-layout="in-article" data-ad-format="fluid" data-ad-slot="6860833347"></ins><script>setTimeout(() => {
+  try{
+    (adsbygoogle = window.adsbygoogle || []).push({})
+  } catch {
+    let dom = document.querySelector('.post-art-warpper');
+    dom.classList.add('hide-art')
+  }
+}, 3000)</script></div></div></article></div><div id="gitalk"></div><script>var gitalk = new Gitalk({
+    clientID: '921d6f0be7c36e212658',
+    clientSecret: '2614ce5f405d03d99d9b76da0dc0a6f75b376bd9',
+    id: '2019-08-16 17:51:30',
+    repo: 'comments',
+    owner: 'sanshiliuxiao',
+    admin: 'sanshiliuxiao'
+})
+gitalk.render('gitalk')</script></div><div class="pjax-main-loading loading"><img class="loading-image" src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/loading.gif"></div></main><footer><div class="footer site-info"><p><i class="icon-copyright"></i><span>2018</span>&minus;<span>2020</span>&nbsp;&nbsp;&nbsp;<i class="icon-heart"></i>&nbsp;&nbsp;<span>椎咲良田</span></p><p><a href="https://github.com/sanshiliuxiao/hexo-theme-aurora.git" target="_blank">hexo-theme-Aurora</a>&nbsp; | &nbsp;快走吧 趁风停止之前</p></div></footer></div><div class="bg"><div class="pc-dynamic-bg"><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/1.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/2.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/3.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/4.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/5.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/6.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/7.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/8.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/9.jpg"></span></div></div><span class="back-to-top"></span><div class="leancloud"><script src="/js/third-party/leancloud.min.js?version=2.0.0"></script><div class="leancloud-app-id" leancloud-app-id="QAIKomD08e9fmVRQP4tkzUDf-MdYXbMMI"></div><div class="leancloud-app-key" leancloud-app-key="vi0TViY0HvYocUR3HxKGd1l9"></div><div class="leancloud-app-hot"></div><div class="leancloud-app-visitor"></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/lib/APlayer/APlayer.min.css"><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/lib/APlayer/APlayer.min.js"></script><div id="aplayer"></div><script>let list = JSON.parse('[{"name":"Once more","artist":"阿保剛","url":"https://files.catbox.moe/13boxb.mp3","cover":"https://i.loli.net/2019/04/18/5cb87157c617e.jpg"},{"name":"All or None","artist":"阿保剛","url":"https://files.catbox.moe/4x69y9.mp3","cover":"https://i.loli.net/2019/04/18/5cb87157b537a.jpg"},{"name":"Karma","artist":"阿保剛","url":"https://files.catbox.moe/r5dsuh.mp3","cover":"https://i.loli.net/2019/04/18/5cb871583cfb7.jpg"},{"name":"星の奏でる歌","artist":"阿保剛","url":"https://files.catbox.moe/m1wd57.mp3","cover":"https://i.loli.net/2019/04/18/5cb871585123b.jpg"}]')
+  const ap = new APlayer({
+      container: document.getElementById('aplayer'),
+      theme: '#b28fce',
+      audio: list,
+      fixed: true
+  });
+  ap.list.show()
+</script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/isMobile.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/timeago.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/pjax.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/zooming.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/backstretch.min.js"></script><script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/highlight.min.js"></script><script src="/js/index.js?version=2.0.0"></script></body></html>
