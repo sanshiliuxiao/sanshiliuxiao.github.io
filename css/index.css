@@ -2374,6 +2374,9 @@ body ::-webkit-scrollbar-track,
   position: absolute;
   left: 0;
   top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .index .content article .post-overview .post-header .post-head {
   display: flex;
@@ -2684,6 +2687,9 @@ body ::-webkit-scrollbar-track,
   position: absolute;
   left: 0;
   top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .post .post-article .post-header .post-head {
   position: absolute;
