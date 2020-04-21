@@ -42,6 +42,29 @@
       font-size: 30px;
       text-align: center;
     }
+    .yyy {
+      font-size: 34px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+    }
+    .yyy .loading {
+      margin-left: 40px;
+      display: inline-block;
+      width: 45px;
+      height: 45px;
+      background: #ccc;
+      animation: animate 1s infinite ease-in-out;
+    }
+    @keyframes animate {
+	  0% { 
+	    transform: perspective(160px) rotateX(0deg) rotateY(0deg);
+	  } 50% { 
+	    transform: perspective(160px) rotateX(-180deg) rotateY(0deg);
+	  } 100% { 
+	    transform: perspective(160px) rotateX(-180deg) rotateY(-180deg);
+	  }
+	}
   </style>
 </head>
 
@@ -54,11 +77,15 @@
     <p class="xxx">
       <a href="https://blog.sanshiliuxiao.top">椎咲良田的个人博客</a>
     </p>
+    <p class="yyy">
+      <span>正在自动跳转，请稍后</span>
+      <span class="loading"></span>
+    </p>
   </main>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       setTimeout(function() {
-      document.location = 'https://blog.sanshiliuxiao.top'
+        document.location = 'https://blog.sanshiliuxiao.top'
     }, 5000)
     })
  
