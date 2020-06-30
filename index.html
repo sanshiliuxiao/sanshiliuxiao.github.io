@@ -24,69 +24,79 @@
       padding: 0;
     }
     main {
-      position: absolute;
-      z-index: 100;
+      
+      font-size: 24px;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      user-select: none;
-      background-color: transparent;
-      font-size: 24px;
     }
-
     .xxx {
-      font-size: 30px;
       text-align: center;
     }
     .yyy {
-      font-size: 34px;
       text-align: center;
       display: flex;
       align-items: center;
     }
-    .yyy .loading {
-      margin-left: 40px;
-      display: inline-block;
-      width: 45px;
-      height: 45px;
-      background: #ccc;
-      animation: animate 1s infinite ease-in-out;
+    .loading {
+      width: 50px;
     }
-    @keyframes animate {
-	  0% { 
-	    transform: perspective(160px) rotateX(0deg) rotateY(0deg);
-	  } 50% { 
-	    transform: perspective(160px) rotateX(-180deg) rotateY(0deg);
-	  } 100% { 
-	    transform: perspective(160px) rotateX(-180deg) rotateY(-180deg);
-	  }
-	}
+    .loading img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+    .bg 
+    {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background: url(https://i.loli.net/2019/12/06/7HmgsuQ2otvFSY3.jpg) #cfd0f8;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  .card {
+    width: 600px;
+    height: 600px;
+    border-radius: 3px;
+    background-color: rgba(255,255,255,0.65);
+    box-shadow: 0 14px 38px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.06);
+    transition: all 0.3s ease 0s, transform 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   </style>
 </head>
 
 <body>
   <main>
+    
+    <div class="bg"></div>
+    <div class="card">
+      <p class="xxx">
+        <a href="https://sanshiliuxiao.gitee.io/">椎咲良田的个人博客</a>
+      </p>
+      <div class="yyy">
+        <p>正在自动跳转，请稍后</p>
+      </div>
+      <div class="loading">
+        <img src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/loading.gif">
+      </div>
+    </div>
 
-    <p>由于 git 客户端无法使用 ssh 工具将 hexo 生成的博客推送到 github 。</p>
-    <p>具体原因，应该是特殊区域端口封锁，毕竟跑到新疆这边来了。</p>
-    <p>不过已经将博客全部转移到新的地方。</p>
-    <p class="xxx">
-      <a href="https://blog.sanshiliuxiao.top">椎咲良田的个人博客</a>
-    </p>
-    <p class="yyy">
-      <span>正在自动跳转，请稍后</span>
-      <span class="loading"></span>
-    </p>
   </main>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       setTimeout(function() {
-        document.location = 'https://blog.sanshiliuxiao.top'
-    }, 5000)
+        document.location = 'https://sanshiliuxiao.gitee.io'
+    }, 3000)
     })
  
   </script>
