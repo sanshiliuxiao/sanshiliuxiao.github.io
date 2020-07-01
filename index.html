@@ -18,6 +18,8 @@
   <meta name="theme-color" content="#b854d4">
   <title>椎咲良田</title>
   <link rel="canonical" href="//sanshiliuxiao.top">
+  <script src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/js/third-party/jquery.min.js"></script>
+  <script src="/js/third-party/leancloud.min.js?version=2.0.0"></script>
   <style>
     body {
       margin: 0;
@@ -93,12 +95,80 @@
 
   </main>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(function() {
+    const ifExistNode = (selector) => $(selector).length !== 0
+    // 访问者记录
+    const appId = "QAIKomD08e9fmVRQP4tkzUDf-MdYXbMMI";
+    const appKey = "vi0TViY0HvYocUR3HxKGd1l9";
+    leancloud.init(appId, appKey);
+    
+  const leancloud = {
+    init(appId, appKey) {
+      if (window.AV) {
+        AV.init(appId, appKey)
+        const Visitor = AV.Object.extend("Visitor")
+        this.addVistor(Visitor)
+      }
+    },
+   
+    addVistor(Visitor) {
+      const referrer = this.getLocation(document.referrer);
+      const hostname = referrer.hostname;
+      const query = new AV.Query(Visitor);
+      query.equalTo('referrer', hostname);
+      query.find().then(results => {
+        if (results.length > 0) {
+          // 存在则增加访问次数
+          const visitors = results[0];
+          console.log(results)
+          visitors.fetchWhenSave(true);
+          visitors.increment("time");
+          visitors.save()
+        } else {
+          // 不存在则新增来访者
+          const newVisitor = new Visitor()
+          /* Set ACL */
+          const acl = new AV.ACL();
+          acl.setPublicReadAccess(true);
+          acl.setPublicWriteAccess(true);
+          newVisitor.setACL(acl);
+          newVisitor.set('referrer', hostname);
+          newVisitor.set('time', 1);
+          newVisitor.save().then(results => {
+          })
+        }
+        query.equalTo('referrer', 'AllCount')
+        query.find().then(results => {
+          if (results.length === 1) {
+            // 存在则增加访问次数
+            const visitors = results[0];
+            visitors.fetchWhenSave(true);
+            visitors.increment("time");
+            visitors.save()
+    
+          } else {
+            // 不存在则新增来访者
+            const newVisitor = new Visitor()
+            const acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newVisitor.setACL(acl);
+            newVisitor.set('referrer', 'AllCount');
+            newVisitor.set('time', 1);
+            newVisitor.save()
+          }
+        })
+      })
+    },
+    getLocation(href) {
+      // 转换访问来源地址
+      const a = document.createElement('a');
+      a.href = href;
+      return a
+    }
+  }
+  setTimeout(function() {
         document.location = 'https://sanshiliuxiao.gitee.io'
-    }, 3000)
-    })
- 
+    }, 3000) 
   </script>
 </body>
 
