@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="ZH-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="referrer" content="no-referrer"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="author" content="椎咲良田"><meta name="copyright" content="椎咲良田"><meta name="og:image" content="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/avatar.jpg"><meta name="og:type" content="website"><meta name="og:site_name" content="椎咲良田"><meta name="og:url" content="sanshiliuxiao.top"><meta name="og：title" content="椎咲良田"><meta name="theme-color" content="#b854d4"><title>椎咲良田</title><link rel="canonical" href="//sanshiliuxiao.top"><link rel="dns-prefetch" href="//cdn.jsdelivr.net"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/favicon.jpg" type="image/x-icon"><link rel="stylesheet" href="/css/index.css?version=2.0.0"><link rel="stylesheet" href="/font/fontello.css?version=2.0.0"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira+Mono|Noto+Serif+SC&amp;amp;display=swap"><link rel="stylesheet" href="/lib/disqus/disqus.min.css"><script src="/lib/disqus/disqus.min.js"></script><link rel="stylesheet" href="/lib/gitalk/gitalk.min.css"><script src="/lib/gitalk/gitalk.min.js"></script></head><body><div class="layout"><header><div class="header"><div class="mobile-bg" style="background-image:url(https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/mobile.png);"></div><h1 class="title">椎咲良田</h1><h2 class="subtitle">快走吧 趁风停止之前</h2><nav class="menu"><a class="menu-item pjax-main-link" href="/"><li><i class="icon-index"></i><span>首页</span></li></a><a class="menu-item pjax-main-link" href="/archives/"><li><i class="icon-archives"></i><span>归档</span></li></a><a class="menu-item pjax-main-link" href="/categories/"><li><i class="icon-categories"></i><span>分类</span></li></a><a class="menu-item pjax-main-link" href="/tags/"><li><i class="icon-tags"></i><span>标签</span></li></a><a class="menu-item pjax-main-link" href="/books/"><li><i class="icon-books"></i><span>书单</span></li></a><a class="menu-item pjax-main-link" href="/inspirations/"><li><i class="icon-inspiration"></i><span>灵感</span></li></a><a class="menu-item pjax-main-link" href="/friends/"><li><i class="icon-friends"></i><span>友链</span></li></a><a class="menu-item pjax-main-link" href="/about/"><li><i class="icon-about"></i><span>关于</span></li></a></nav></div></header><main><div class="main-wrapper"></div><div class="pjax-main-page"><div class="post"><article class="post-article"><div class="post-header"><img class="default-image" src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/postDefaultImage .png" style="opacity:0;"><img class="post-image" src="https://i.loli.net/2020/07/21/bDTwhX16kxqKIZp.jpg"><div class="post-head"><div class="post-title-wrapper"><h1 class="post-title">Inno Setup 初体验</h1></div><div class="post-meta"><span class="post-date"><i class="icon-calendar"></i><span class="date timeago" datetime="2020-07-21T08:08:04.000Z"></span></span><span class="post-hot"><i class="icon-fire"></i><span class="leancloud_visitors" id="/notebook/other/20200721-软件打包初体验/" data-flag-title="Inno Setup 初体验">热度<span class="leancloud-visitors-count">0</span>℃</span></span><span class="post-tags"><i class="icon-tag"></i><span class="tag">软件打包</span></span><span class="post-categories"><i class="icon-bookmark-empty"></i><span class="category">笔记本</span></span></div></div></div><div class="post-content"><div class="markdown"><p>打包本就是了简洁，所以我选择 <a href="https://jrsoftware.org/isdl.php" target="_blank" rel="noopener">Inno Setup</a>。</p>
+<p>这是一款免费、简洁的打包工具，甚至不需要任何教程，就能直接上手的打包工具。</p>
+<p>以最近用 WPF 开发的简单项目为例，记录整个打包过程。</p>
+<h2 id="软件发布"><a href="#软件发布" class="headerlink" title="软件发布"></a>软件发布</h2><h3 id="设置图标"><a href="#设置图标" class="headerlink" title="设置图标"></a>设置图标</h3><p>当开发完项目，准备发布之前，我们一般会进行项目的 图标之类的设置。</p>
+<p>在 VS 2019 中，鼠标选中项目右击，选择属性，大概会弹出下面类型的窗口，在资源那一栏，就可以去浏览、选择你想要的图标、确定，这个图标会被自动复制到项目的根目录下的。</p>
+
+    <div class="img-box">
+      <img class="img-zoomable" src="1.png">
+      <span>◭ 设置图标</span>
+    </div>
+  
+
+<h3 id="发布应用"><a href="#发布应用" class="headerlink" title="发布应用"></a>发布应用</h3><p>依次选择发布、启动、文件夹、下一步、设置发布文件夹、完成。</p>
+<p>根据需求选择不同的部署方式，依赖框架模式需要目标电脑有对应的环境（本项目依赖 dotnet core 3），独立模式，会在发布时将所有需要的环境都保存在发布文件夹下，好处是不要求目标电脑有对应环境，坏处是发布后的文件体积很大。</p>
+<p>目标运行时的设置，则跟跨平台有关。</p>
+
+    <div class="img-box">
+      <img class="img-zoomable" src="2.png">
+      <span>◭ 准备发布</span>
+    </div>
+  
+
+
+    <div class="img-box">
+      <img class="img-zoomable" src="3.png">
+      <span>◭ 准备发布</span>
+    </div>
+  
+
+<p>项目发布完，就会发现你设置的发布路径里多了很多文件，里面有一个 <code>exe</code>（因为是 wpf 项目），点击它就能够运行软件了。如果是懒癌患者，到达这一步就已经可以结束了，毕竟已经可以正常使用了，而且只要直接压缩，就能发给别人使用啦。</p>
+<h2 id="软件打包"><a href="#软件打包" class="headerlink" title="软件打包"></a>软件打包</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>现在，桌面上已经出现了一个 temp 文件（我设置的发布路径），我们再稍微准备一点点东西，让打包的时候更加完善。 一个图标，一个许可证，一个空文件夹。咳咳，最左边那个是游戏，请忽略。</p>
+
+    <div class="img-box">
+      <img class="img-zoomable" src="4.png">
+      <span>◭ 打包前的准备</span>
+    </div>
+  
+
+
+<h3 id="开始打包"><a href="#开始打包" class="headerlink" title="开始打包"></a>开始打包</h3><p>下面基本上都是图片啦，安装图中的提示，点击下一步，最后生成就行了。</p>
+
+    <div class="img-box">
+      <img class="img-zoomable" src="5.png">
+      <span>◭ 步骤 1</span>
+    </div>
+  
+
+
+    <div class="img-box">
+      <img class="img-zoomable" src="6.png">
+      <span>◭ 步骤 2</span>
+    </div>
+  
+
+
+    <div class="img-box">
+      <img class="img-zoomable" src="7.png">
+      <span>◭ 步骤 3</span>
+    </div>
+  
+
+
+    <div class="img-box">
+      <img class="img-zoomable" src="8.png">
+      <span>◭ 步骤 4</span>
+    </div>
+  
+
+
+    <div class="img-box">
+      <img class="img-zoomable" src="9.png">
+      <span>◭ 步骤 5</span>
+    </div>
+  
+
+
+    <div class="img-box">
+      <img class="img-zoomable" src="10.png">
+      <span>◭ 步骤 6</span>
+    </div>
+  
+
+    <div class="img-box">
+      <img class="img-zoomable" src="11.png">
+      <span>◭ 步骤 7</span>
+    </div>
+  
+
+
+    <div class="img-box">
+      <img class="img-zoomable" src="12.png">
+      <span>◭ 步骤 8</span>
+    </div>
+  
+
+
+    <div class="img-box">
+      <img class="img-zoomable" src="13.png">
+      <span>◭ 步骤 9</span>
+    </div>
+  
+
+
+    <div class="img-box">
+      <img class="img-zoomable" src="14.png">
+      <span>◭ 步骤 10</span>
+    </div>
+  
+
+
+    <div class="img-box">
+      <img class="img-zoomable" src="15.png">
+      <span>◭ 步骤 11</span>
+    </div>
+  
+
+
+    <div class="img-box">
+      <img class="img-zoomable" src="16.png">
+      <span>◭ 步骤 12</span>
+    </div>
+  
+
+
+    <div class="img-box">
+      <img class="img-zoomable" src="17.png">
+      <span>◭ 步骤 13</span>
+    </div>
+  
+
+<h2 id="安装预览"><a href="#安装预览" class="headerlink" title="安装预览"></a>安装预览</h2>
+    <div class="img-box">
+      <img class="img-zoomable" src="18.png">
+      <span>◭ 安装信息</span>
+    </div>
+  
+
+
+    <div class="img-box">
+      <img class="img-zoomable" src="19.png">
+      <span>◭ 软件运行界面</span>
+    </div>
+  
+
+
+
+
+</div></div></article></div><div id="disqus"><div id="disqus_thread"></div><script>var dsqjs = new DisqusJS({
+  shortname: 'zxlt',
+  apikey: 'Z2sfc9UV4gEmbyzteuAeu9Yu65UIiI3RFHqRanEE6BuMWpawAMcei3vCFCuifQls'
+});</script></div></div><div class="pjax-main-loading loading"><img class="loading-image" src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/loading.gif"></div></main><footer><div class="footer site-info"><p><i class="icon-copyright"></i><span>2018</span>&minus;<span>2020</span>&nbsp;<span>椎咲良田</span>&nbsp;<span><a href="https://github.com/sanshiliuxiao/hexo-theme-aurora.git" target="_blank">hexo-theme-Aurora</a></span></p></div></footer></div><div class="bg"><div class="pc-dynamic-bg"><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/1.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/2.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/3.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/4.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/5.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/6.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/7.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/8.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/9.jpg"></span></div></div><span class="back-to-top"></span><div class="leancloud"><script src="/js/third-party/leancloud.min.js?version=2.0.0"></script><div class="leancloud-app-id" leancloud-app-id="QAIKomD08e9fmVRQP4tkzUDf-MdYXbMMI"></div><div class="leancloud-app-key" leancloud-app-key="vi0TViY0HvYocUR3HxKGd1l9"></div><div class="leancloud-app-hot"></div></div><link rel="stylesheet" href="/lib/APlayer/APlayer.min.css"><script src="/lib/APlayer/APlayer.min.js"></script><div id="aplayer"></div><script>let list = JSON.parse('[{"name":"Once more","artist":"阿保剛","url":"https://files.catbox.moe/13boxb.mp3","cover":"https://i.loli.net/2019/04/18/5cb87157c617e.jpg"},{"name":"All or None","artist":"阿保剛","url":"https://files.catbox.moe/4x69y9.mp3","cover":"https://i.loli.net/2019/04/18/5cb87157b537a.jpg"},{"name":"Karma","artist":"阿保剛","url":"https://files.catbox.moe/r5dsuh.mp3","cover":"https://i.loli.net/2019/04/18/5cb871583cfb7.jpg"},{"name":"星の奏でる歌","artist":"阿保剛","url":"https://files.catbox.moe/m1wd57.mp3","cover":"https://i.loli.net/2019/04/18/5cb871585123b.jpg"}]')
+  const ap = new APlayer({
+      container: document.getElementById('aplayer'),
+      theme: '#b28fce',
+      audio: list,
+      fixed: true
+  });
+  ap.list.show()
+</script><script src="/js/third-party/jquery.min.js?version=2.0.0"></script><script src="/js/third-party/isMobile.min.js?version=2.0.0"></script><script src="/js/third-party/timeago.min.js?version=2.0.0"></script><script src="/js/third-party/pjax.min.js?version=2.0.0"></script><script src="/js/third-party/zooming.min.js?version=2.0.0"></script><script src="/js/third-party/backstretch.min.js?version=2.0.0"></script><script src="/js/highlight.min.js?version=2.0.0"></script><script src="/js/index.js?version=2.0.0"></script></body></html>

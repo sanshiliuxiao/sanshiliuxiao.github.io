@@ -1755,6 +1755,21 @@ body ::-webkit-scrollbar-track,
     box-shadow: 0 14px 38px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.06);
   }
 }
+#disqus {
+  margin: 20px 0;
+  background-color: rgba(255,255,255,0.65);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.24);
+}
+#disqus #disqus_thread {
+  margin: 20px 10px;
+  padding: 10px;
+}
+@media screen and (min-width: 768px) {
+  #disqus #disqus_thread {
+    background-color: rgba(255,255,255,0.65);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.24);
+  }
+}
 .about {
   flex: 1;
   border-radius: 3px;
