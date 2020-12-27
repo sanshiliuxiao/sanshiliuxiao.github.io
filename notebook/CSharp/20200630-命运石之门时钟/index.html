@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="ZH-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="referrer" content="no-referrer"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="author" content="椎咲良田"><meta name="copyright" content="椎咲良田"><meta name="og:image" content="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/avatar.jpg"><meta name="og:type" content="website"><meta name="og:site_name" content="椎咲良田"><meta name="og:url" content="sanshiliuxiao.top"><meta name="og：title" content="椎咲良田"><meta name="theme-color" content="#b854d4"><title>椎咲良田</title><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/favicon.jpg" type="image/x-icon"><link rel="stylesheet" href="/css/index.css?version=2.0.0"><link rel="stylesheet" href="/font/fontello.css?version=2.0.0"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira+Mono|Noto+Serif+SC&amp;amp;display=swap"><link rel="canonical" href="//sanshiliuxiao.top"><link rel="dns-prefetch" href="//cdn.jsdelivr.net"><link rel="stylesheet" href="/lib/gitalk/gitalk.min.css"><script src="/lib/gitalk/gitalk.min.js"></script><script src="/lib/valine/Valine.min.js">   </script></head><body><div class="layout"><header><div class="header"><div class="mobile-bg" style="background-image:url(https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/mobile.png);"></div><h1 class="title">椎咲良田</h1><h2 class="subtitle">快走吧 趁风停止之前</h2><nav class="menu"><a class="menu-item pjax-main-link" href="/"><li><i class="icon-index"></i><span>首页</span></li></a><a class="menu-item pjax-main-link" href="/archives/"><li><i class="icon-archives"></i><span>归档</span></li></a><a class="menu-item pjax-main-link" href="/categories/"><li><i class="icon-categories"></i><span>分类</span></li></a><a class="menu-item pjax-main-link" href="/tags/"><li><i class="icon-tags"></i><span>标签</span></li></a><a class="menu-item pjax-main-link" href="/books/"><li><i class="icon-books"></i><span>书单</span></li></a><a class="menu-item pjax-main-link" href="/inspirations/"><li><i class="icon-inspiration"></i><span>灵感</span></li></a><a class="menu-item pjax-main-link" href="/friends/"><li><i class="icon-friends"></i><span>友链</span></li></a><a class="menu-item pjax-main-link" href="/about/"><li><i class="icon-about"></i><span>关于</span></li></a></nav></div></header><main><div class="main-wrapper"></div><div class="pjax-main-page"><div class="post"><article class="post-article"><div class="post-header"><img class="default-image" src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/postDefaultImage .png" style="opacity:0;"><img class="post-image" src="https://i.loli.net/2020/06/30/iGW3CIPSUZas4Yx.jpg"><div class="post-head"><div class="post-title-wrapper"><h1 class="post-title">[WPF] 命运石之门时钟</h1></div><div class="post-meta"><span class="post-date"><i class="icon-calendar"></i><span class="date timeago" datetime="2020-06-30T15:37:09.000Z"></span></span><span class="post-hot"><i class="icon-fire"></i><span class="leancloud_visitors" id="/notebook/CSharp/20200630-命运石之门时钟/" data-flag-title="[WPF] 命运石之门时钟">热度<span class="leancloud-visitors-count">0</span>℃</span></span><span class="post-tags"><i class="icon-tag"></i><span class="tag">CSharp</span><span class="tag">命运石之门</span></span><span class="post-categories"><i class="icon-bookmark-empty"></i><span class="category">笔记本</span></span></div></div></div><div class="post-content heti"><div class="markdown"><h2 id="太长不看版"><a href="#太长不看版" class="headerlink" title="太长不看版"></a>太长不看版</h2><pre><code>
+GitHub:(https://github.com/sanshiliuxiao/DivergenceMeter)
+
+Gitee: (https://gitee.com/sanshiliuxiao/DivergenceMeter)
+
+
+在 exe 文件夹下两个版本，食用的话建议选 net472，因为现在 windows 一般都内置了 .net framework4.7.2。
+</code></pre>
+    <div class="img-box">
+      <img class="img-zoomable" src="0.gif">
+      <span>◭ 软件运行效果</span>
+    </div>
+  
+
+
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>去年，还写过 web 版的 时钟挂件，今年因为学了点 <code>C#</code>，索性又学了点 <code>WPF</code>，经过一段时间的折腾终于是把这个时钟挂件给写完了。</p>
+<p>本文记录这个时钟挂件源代码的代码片段。我没有用 MVVM 模式开发，所有一切的操作，都是基于事件即发生了什么事件，触发某样动作或者进行某些设置。基于事件的工作流程好处就是简单易懂，坏处是写着写着代码就乱成一团了，但是有一句话说的好：<strong>又不是不能用！</strong></p>
+<h3 id="异性窗体"><a href="#异性窗体" class="headerlink" title="异性窗体"></a>异性窗体</h3><p>异性窗体一般就是指 无边框的透明窗体，主要就是设置<code>WindowStyle</code>、 <code>ResizeMode</code> 和 <code>AllwosTransparency</code> 属性。 设置完毕后，会发现窗体不能移动了，这个时候需要对 window 的 鼠标事件进行监听，这里 我选择的是 鼠标左键按下去 的事件 <code>MouseLeftButtonDown</code>，调用 <code>DragMove</code> 函数。</p>
+<pre><code>// MainWindow.xaml
+
+&lt;Window WindowStyle=&quot;None&quot; ResizeMode=&quot;NoResize&quot; AllowsTransparency=&quot;True&quot; MouseLeftButtonDown=&quot;Window_MouseLeftButtonDown&quot; &gt;&lt;/Window&gt;
+
+// MainWindow.xaml.cs
+
+private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+   DragMove();
+}
+</code></pre><h3 id="点击穿透"><a href="#点击穿透" class="headerlink" title="点击穿透"></a>点击穿透</h3><p>这个功能实现起来花的时间最久，在网上找了很多文章，最终才实现这个理想中的效果。</p>
+<p>最开始我是设置 <code>IsHitTestVisible</code> 属性去实现这个效果，网络上很多文章，也是这样告诉我的，可是效果确实不怎么样。</p>
+<pre><code>// MainWindow.xaml
+
+&lt;Window IsHitTestVisible=&quot;False&quot; /&gt;&lt;/Window&gt;</code></pre><p>发现实现效果不怎么样之后，去 GitHub 上 提 <a href="https://github.com/dotnet/wpf/issues/3088" target="_blank" rel="noopener">Issues</a> 得到关键字 <code>WS_EX_TRANSPARENT</code>，之后又找了很多资料，才实现这个功能。主要是使用 <code>user32.dll</code> 这个库， 一般 Windows 系统都内置 <code>user32.dll</code> 文件。</p>
+<p><strong>注意： 点击穿透功能和运行拖拽功能是互斥的，因为不可能又穿透，又能拖拽啊！！！</strong></p>
+
+    <div class="img-box">
+      <img class="img-zoomable" src="1.gif">
+      <span>◭ IsHitTestVisible</span>
+    </div>
+  
+
+    <div class="img-box">
+      <img class="img-zoomable" src="2.gif">
+      <span>◭ 期望效果</span>
+    </div>
+  
+
+
+<pre><code>// MainWindow.xaml
+&lt;!-- IsHitTestVisible=&quot;False&quot; --&gt;
+
+// MainWindow.xaml.cs
+
+// use32.dll 引入 所需要的函数
+#region Window styles
+[DllImport(&quot;user32.dll&quot;)]
+public static extern int GetWindowLong(IntPtr hwnd, int index);
+
+[Flags]
+public enum ExtendedWindowStyles
+{
+    WS_EX_TOOLWINDOW = 0x00000080,
+    WS_EX_LAYERED = 0x80000,
+    WS_EX_TRANSPARENT = 0x00000020
+}
+[Flags]
+public enum GetWindowLongFields
+{
+    GWL_EXSTYLE = (-20),
+}
+[DllImport(&quot;user32.dll&quot;)]
+public static extern int SetWindowLong(IntPtr hwnd, int index, int newStyle);
+
+public static IntPtr SetWindowLong(IntPtr hWnd, int nIndex, IntPtr dwNewLong)
+{
+    int error = 0;
+    IntPtr result = IntPtr.Zero;
+    // Win32 SetWindowLong doesn&#39;t clear error on success
+    SetLastError(0);
+
+    if (IntPtr.Size == 4)
+    {
+        // use SetWindowLong
+        Int32 tempResult = IntSetWindowLong(hWnd, nIndex, IntPtrToInt32(dwNewLong));
+        error = Marshal.GetLastWin32Error();
+        result = new IntPtr(tempResult);
+    }
+    else
+    {
+        // use SetWindowLongPtr
+        result = IntSetWindowLongPtr(hWnd, nIndex, dwNewLong);
+        error = Marshal.GetLastWin32Error();
+    }
+
+    if ((result == IntPtr.Zero) &amp;&amp; (error != 0))
+    {
+        throw new System.ComponentModel.Win32Exception(error);
+    }
+
+    return result;
+}
+
+[DllImport(&quot;user32.dll&quot;, EntryPoint = &quot;SetWindowLongPtr&quot;, SetLastError = true)]
+private static extern IntPtr IntSetWindowLongPtr(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
+
+[DllImport(&quot;user32.dll&quot;, EntryPoint = &quot;SetWindowLong&quot;, SetLastError = true)]
+private static extern Int32 IntSetWindowLong(IntPtr hWnd, int nIndex, Int32 dwNewLong);
+
+private static int IntPtrToInt32(IntPtr intPtr)
+{
+    return unchecked((int)intPtr.ToInt64());
+}
+
+[DllImport(&quot;kernel32.dll&quot;, EntryPoint = &quot;SetLastError&quot;)]
+public static extern void SetLastError(int dwErrorCode);
+#endregion
+
+// 如果要在应用一启动，就设置该效果，需要重写 OnSourceInitialized 函数
+// 只有在 OnSourceInitialized 函数触发之后，才能获取到 Windows 句柄
+protected override void OnSourceInitialized(EventArgs e)
+{
+    // 从设置文件里面读取 bool 值
+    ClickWindowAndNotMouseEvent(flag);
+}
+
+public void ClickWindowAndNotMouseEvent(bool flag)
+{
+    // Get this window&#39;s handle
+    IntPtr hwnd = new WindowInteropHelper(this).Handle;
+    if (flag)
+    {
+        SetWindowLong(hwnd, (int)GetWindowLongFields.GWL_EXSTYLE, (int)ExtendedWindowStyles.WS_EX_TRANSPARENT);
+    } else
+    {
+        SetWindowLong(hwnd, (int)GetWindowLongFields.GWL_EXSTYLE, (int)ExtendedWindowStyles.WS_EX_LAYERED);
+    }
+
+}
+
+</code></pre><h3 id="系统托盘"><a href="#系统托盘" class="headerlink" title="系统托盘"></a>系统托盘</h3><p>这个功能分三点：</p>
+<ol>
+<li>隐藏任务栏的图标</li>
+<li>当 Win + Tab 时不显示该应用界面</li>
+<li>显示系统托盘图标</li>
+</ol>
+<p>隐藏任务栏的图标，只需要设置 <code>ShowInTaskbar</code> 属性</p>
+<pre><code>// MainWindow.xaml
+&lt;Window ShowInTaskbar=&quot;False&quot;&gt;&lt;/Window&gt;</code></pre><p>当 Win + tab 切换时，不应该显示应用界面，这里同样借用了 <code>user32.dll</code> 的函数实现</p>
+<pre><code>// MainWindow.xaml.cs
+protected override void OnSourceInitialized(EventArgs e)
+{
+
+    HiddenTheAppInToolWindow();
+}
+private void HiddenTheAppInToolWindow()
+{
+    WindowInteropHelper wndHelper = new WindowInteropHelper(this);
+    int exStyle = (int)GetWindowLong(wndHelper.Handle, (int)GetWindowLongFields.GWL_EXSTYLE);
+    exStyle = exStyle | (int)ExtendedWindowStyles.WS_EX_TOOLWINDOW;
+    SetWindowLong(wndHelper.Handle, (int)GetWindowLongFields.GWL_EXSTYLE, (IntPtr)exStyle);
+}
+</code></pre><p>实现系统托盘功能，是使用的 <code>Hardcodet.NotifyIcon.Wpf</code> 第三方库，简单易用。</p>
+<h3 id="开机自启功能"><a href="#开机自启功能" class="headerlink" title="开机自启功能"></a>开机自启功能</h3><p>需要往注册表里面添加对应的程序名和程序路径</p>
+<pre><code>private void StartWhenSystemStart(bool flag)
+{
+    String programName = &quot;DivergenceMeter&quot;;
+    String programPath = Process.GetCurrentProcess().MainModule.FileName;
+    RegistryKey reg = Registry.CurrentUser.OpenSubKey(&quot;SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run&quot;, true);
+
+    if (flag)
+    {
+        reg.SetValue(programName, programPath);
+    }
+    else
+    {
+        reg.DeleteValue(programName, false);
+    }
+}</code></pre><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>还有诸如 窗口置顶、 允许拖拽，边缘吸附，透明度设置，这些效果都是很简单就能实现的，对应的代码比较简单，就不一一记录了。</p>
+<h3 id="后文"><a href="#后文" class="headerlink" title="后文"></a>后文</h3><p>虽说 WPF 在国内互联网领域不受待见，但是在工业或者金融行业上 WPF 还是有用武之地的，国内的 WPF 资料真的很匮乏，好多都是很早以前的书籍，文章。好在 这些文章都还蛮有参考价值的。</p>
+<p>说实话，我自己都比较吃惊，居然能把这个挂件写出来，我 CSharp 也就学到了基础的类、委托、事件、接口这些，感觉完全不够用，都是一边写，一边查资料，就这样把这个挂件写出来了。</p>
+</div></div></article></div></div><div class="pjax-main-loading loading"><img class="loading-image" src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/loading.gif"></div></main><footer><div class="footer site-info"><p><i class="icon-copyright"></i><span>2018</span>&minus;<span>2020</span>&nbsp;&nbsp;&nbsp;<i class="icon-heart"></i>&nbsp;&nbsp;<span>椎咲良田</span></p><p><a href="https://github.com/sanshiliuxiao/hexo-theme-aurora.git" target="_blank">hexo-theme-Aurora</a>&nbsp; | &nbsp;快走吧 趁风停止之前</p></div></footer></div><div class="bg"><div class="pc-dynamic-bg"><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/1.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/2.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/3.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/4.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/5.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/6.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/7.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/8.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/9.jpg"></span></div></div><span class="back-to-top"></span><div class="leancloud"><script src="/js/third-party/leancloud.min.js?version=2.0.0"></script><div class="leancloud-app-id" leancloud-app-id="QAIKomD08e9fmVRQP4tkzUDf-MdYXbMMI"></div><div class="leancloud-app-key" leancloud-app-key="vi0TViY0HvYocUR3HxKGd1l9"></div><div class="leancloud-app-hot"></div><div class="leancloud-app-visitor"></div></div><link rel="stylesheet" href="/lib/APlayer/APlayer.min.css"><script src="/lib/APlayer/APlayer.min.js"></script><div id="aplayer"></div><script>let list = JSON.parse('[{"name":"Once more","artist":"阿保剛","url":"https://files.catbox.moe/13boxb.mp3","cover":"https://i.loli.net/2019/04/18/5cb87157c617e.jpg"},{"name":"All or None","artist":"阿保剛","url":"https://files.catbox.moe/4x69y9.mp3","cover":"https://i.loli.net/2019/04/18/5cb87157b537a.jpg"},{"name":"Karma","artist":"阿保剛","url":"https://files.catbox.moe/r5dsuh.mp3","cover":"https://i.loli.net/2019/04/18/5cb871583cfb7.jpg"},{"name":"星の奏でる歌","artist":"阿保剛","url":"https://files.catbox.moe/m1wd57.mp3","cover":"https://i.loli.net/2019/04/18/5cb871585123b.jpg"}]')
+  const ap = new APlayer({
+      container: document.getElementById('aplayer'),
+      theme: '#b28fce',
+      audio: list,
+      fixed: true
+  });
+  ap.list.show()
+</script><script src="/js/third-party/jquery.min.js?version=2.0.0"></script><script src="/js/third-party/isMobile.min.js?version=2.0.0"></script><script src="/js/third-party/timeago.min.js?version=2.0.0"></script><script src="/js/third-party/pjax.min.js?version=2.0.0"></script><script src="/js/third-party/zooming.min.js?version=2.0.0"></script><script src="/js/third-party/backstretch.min.js?version=2.0.0"></script><script src="/js/highlight.min.js?version=2.0.0"></script><script src="/js/index.js?version=2.0.0"></script></body></html>
