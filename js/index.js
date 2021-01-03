@@ -311,6 +311,15 @@ const leancloud = {
       this.showLike(Like)
     }
   },
+  toAddLike(){
+    return new Promise((resolve, reject) => {
+      if (ifExistNode('.leancloud-app-like')) {
+        const Like = AV.Object.extend("Like")
+        this.addLike(Like)
+        resolve()
+    }
+    })
+  },
   addLike(Like) {
     const referrer = this.getLocation(document.referrer)
     const hostname = referrer.hostname
@@ -320,6 +329,8 @@ const leancloud = {
         if (results.length === 1) {
           // 存在则增加访问次数
           const star = results[0]
+          
+          const time = results[0].get('time')
           star.fetchWhenSave(true)
           star.increment("time")
           star.save()
@@ -386,12 +397,12 @@ const imageZooming = {
     this.listen()
   },
   listen() {
-    if (Zooming && ifExistNode('.markdown .img-box')) {
+    if (Zooming && ifExistNode('.img-box')) {
       const zooming = new Zooming({
         bgOpacity: 0.6,
-        zIndex: 100
+        zIndex: 9999,
       })
-      if (ifExistNode('.markdown .img-box')) {
+      if (ifExistNode('.img-box')) {
         zooming.listen('.img-zoomable')
       }
     }
@@ -517,24 +528,113 @@ const pjax = {
 // Sakura Panel 功能
 
 const sakura = {
-  sakuraPanel: null,
-  sakuraIcon: null,
-  sakuraMask: null,
+  Panel: null,
+  Icon: null,
+  Mask: null,
+  swiper: null,
+  swiperItems: null,
+  lockswiper: false,
+  currentswiperItemIndex: 0,
+  swiperItemCount: 0,
+  swiperItemWidth: 0,
+  swiperLeftBtn: null,
+  swiperRightBtn: null,
+  starBtn: null,
+  isLikeSite: false,
+  canPrev: false,
+  canNext: false,
   init(){
     if (ifExistNode('#sakura-panel')){
-      this.sakuraPanel = $("#sakura-panel")
-      this.sakuraIcon = $("#sakura-panel .sakura-icon")
-      this.sakuraMask = $("#sakura-panel .sakura-mask")
+      this.Panel = $("#sakura-panel")
+      this.Icon = $("#sakura-panel .sakura-icon")
+      this.Mask = $("#sakura-panel .sakura-mask")
+
+      this.swiper = $("#sakura-panel .swiper")
+      this.swiperItems = this.swiper.find(".swiper-item")
+      this.swiperItemCount = this.swiperItems.length;
+
+      if (this.swiperItemCount > 1) {
+        // 能滚动
+        this.canPrev = true
+        this.canNext = true
+      }
+      // 两边加上一个
+      this.swiper.prepend(this.swiperItems.last().clone())
+      this.swiper.append(this.swiperItems.first().clone())
+      // 重新获取 items
+      this.swiperItems = this.swiper.find(".swiper-item")
+      this.swiperItemCount = this.swiperItems.length
+
+      this.swiperLeftBtn = $("#sakura-panel .left-btn")
+      this.swiperRightBtn = $("#sakura-panel .right-btn")
+
+      this.starBtn = $("#sakura-panel .star")
+      this.isLikeSite = localStorage.getItem('isLikeSite') == 'true'
+      if (this.isLikeSite){
+        this.starBtn.attr("data-title", "谢谢点赞 (●'◡'●)")
+      }
       this.bind()
     }
   },
   bind() {
-    this.sakuraIcon.click((e) => {
-      this.sakuraPanel.addClass("show-panel")
+    this.Icon.click((e) => {
+      this.Panel.addClass("show-panel")
+      // 由于 width: 100% 的原因，因此只能当 面板显示后，获取到宽度
+      this.swiperItemWidth = this.swiper.width()
+      // 切换到第二个（即原来的第一个呀）
+      this.currentswiperItemIndex = 1
+      this.updateSwiperStyle()
     })
-    this.sakuraMask.click((e) => {
-      this.sakuraPanel.removeClass("show-panel")
+    this.Mask.click((e) => {
+      this.Panel.removeClass("show-panel")
     })
+    this.swiperLeftBtn.click((e) => {
+      if (this.canPrev){
+        this.swiperTo(-1)
+      }
+
+    })
+    this.swiperRightBtn.click((e) => {
+      if (this.canNext){
+        this.swiperTo(1)
+      }
+    })
+    this.starBtn.click((e) => {
+      if (!this.isLikeSite){
+        localStorage.setItem('isLikeSite', 'true');
+        leancloud.toAddLike().then(() => { 
+          this.starBtn.attr("data-title", "谢谢点赞 (●'◡'●)")
+          this.isLikeSite = true
+        })
+      }
+    })
+  },
+  swiperTo(direction){
+    if (this.lockswiper) return
+    this.lockswiper = true
+    this.swiper.addClass("animate")
+    this.currentswiperItemIndex += direction
+    this.updateSwiperStyle()
+    setTimeout(() => {
+      this.lockswiper = false;
+      if (this.currentswiperItemIndex === 0) {
+        this.swiper.removeClass("animate")
+        // 切换到倒数第二个
+        this.currentswiperItemIndex = this.swiperItemCount - 2;
+        this.updateSwiperStyle()
+
+      }
+      if (this.currentswiperItemIndex == this.swiperItemCount - 1){
+        this.swiper.removeClass("animate")
+        // 切换到正数第二个
+        this.currentswiperItemIndex = 1
+        this.updateSwiperStyle()
+      }
+    }, 500)
+  },
+  updateSwiperStyle(){
+    let transformWith = this.currentswiperItemIndex * this.swiperItemWidth; 
+    this.swiper.attr("style", `transform: translate3d(-${transformWith}px, 0, 0)`)
   }
 }
 
