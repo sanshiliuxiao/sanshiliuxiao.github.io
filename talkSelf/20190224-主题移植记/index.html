@@ -8,7 +8,7 @@
 <p>至于<code>list_tags()</code>的排序问题，官方给出的文档标签排列方式默认是’name’（其他的呢？？？），结果这会导致标签显示与写文章时候的标签顺序不一样，最后还是翻源代码的时候，翻到了还能使用<code>id</code>，解决了这个问题。</p>
 <p>临近结束发现rem布局问题，最开始依赖于执行一次<code>setRem</code>计算函数，即为根元素添加font-size，这样导致的问题就是每次加载页面的时候，页面总是从一团文字拓展开来。其原因就是根元素一开始并没有设置font-size。所以解决办法就是使用css的媒体查询方法，在一开始就预先给根元素设置font-size，同时取消<code>setRem</code>函数的执行。</p>
 <p>在移植主题的过程中，咱学会了去翻官方的文档，甚至源代码，学会了如何去分离通用模板和通用样式，学会了去通过模仿其他主题的源码，对自己的代码进行改造。当然，使用的<code>ejs</code>模板和<code>stylus</code>语言也在这个过程中基本学会了，同时借助了很多第三方的代码，来对主题进行功能的优化。</p>
-<div style="text-align : center"><!-- 歌曲名 --><p> </p><!--嵌入的音乐iframe --></div><h2>Google广告</h2><div class="google-ads-post-wrapper"><div class="google-ads-content"><div class="google-seat"><p>假装这里有广告</p></div></div></div></div></div></article></div><div id="gitalk"></div><script>var gitalk = new Gitalk({
+<div style="text-align : center"><!-- 歌曲名 --><p> </p><!--嵌入的音乐iframe --></div><h2>Google广告</h2><div class="google-ads-post-wrapper"><div class="google-seat"><p>假装这里有广告</p></div><div class="google-ads-content"></div></div></div></div></article></div><div id="gitalk"></div><script>var gitalk = new Gitalk({
     clientID: 'df197d1e1761f7b45688',
     clientSecret: 'cfbd1df2464d6ce367281fdc437d60701867b30a',
     id: '2019-02-25 01:57:00',

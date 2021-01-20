@@ -2625,16 +2625,31 @@ body,
   color: #555;
   word-break: break-all;
 }
-.about .google-ads-about-wrapper {
+.about .introduction .intor .google-ads-about,
+.about .google-ads-about-wrapper .intor .google-ads-about {
   max-width: 100%;
   overflow: hidden;
-}
-.about .google-ads-about-wrapper ins {
-  max-width: 100%;
-  overflow: hidden;
-}
-.about .google-ads-about-wrapper .google-seat {
   height: 200px;
+  position: relative;
+}
+.about .introduction .intor .google-ads-about .google-ads-content,
+.about .google-ads-about-wrapper .intor .google-ads-about .google-ads-content {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: transparent;
+  z-index: 2;
+}
+.about .introduction .intor .google-ads-about .google-ads-content ins,
+.about .google-ads-about-wrapper .intor .google-ads-about .google-ads-content ins {
+  max-width: 100%;
+  overflow: hidden;
+}
+.about .introduction .intor .google-ads-about .google-seat,
+.about .google-ads-about-wrapper .intor .google-ads-about .google-seat {
+  height: 100%;
   text-align: center;
   display: flex;
   align-items: center;
@@ -3553,8 +3568,25 @@ body,
 .post .post-article .post-content .google-ads-post-wrapper {
   max-width: 100%;
   overflow: hidden;
+  position: relative;
+  height: 200px;
+}
+.post .post-article .post-content .google-ads-post-wrapper .google-seat {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  color: #555;
+  justify-content: center;
+  height: 100%;
 }
 .post .post-article .post-content .google-ads-post-wrapper .google-ads-content {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: transparent;
+  z-index: 2;
   border-radius: 3px;
   background-color: rgba(255,255,255,0.65);
   box-shadow: 0 14px 38px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.06);
@@ -3570,12 +3602,4 @@ body,
   max-width: 100%;
   overflow: hidden;
   border: none !important;
-}
-.post .post-article .post-content .google-ads-post-wrapper .google-ads-content .google-seat {
-  height: 200px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  color: #555;
-  justify-content: center;
 }

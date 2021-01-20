@@ -43,7 +43,7 @@ document.querySelectorAll(&#39;pre code&#39;).forEach((block) =&gt; {
 <p>这样本地预览的时候，可以正常的使用 pjax 功能啦，尝试重新生成推送到 Github 后进行访问测试，也没有问题。</p>
 <p>其根本原因在于当服务器接收到某个末尾不含 <code>/</code> 的 URL 请求时，比如 <code>http://localhost:5000/archives</code> 服务器会先搜索网站的根目录里面有没有 <code>archives</code> 文件，如果没有，就会把 <code>archives</code> 当成目录进行处理，然后返回 <code>archives</code> 目录下的默认首页，也即 <code>http://localhost:5000/archives/</code>(等同于<code>http://localhost:5000/archives/index.html</code>）</p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>可能还会因为自己的水平有限，这个主题存在一些其他的 bug 没有被发现，先暂时记录这么多了。</p>
-<h2>Google广告</h2><div class="google-ads-post-wrapper"><div class="google-ads-content"><div class="google-seat"><p>假装这里有广告</p></div></div></div></div></div></article></div><div id="gitalk"></div><script>var gitalk = new Gitalk({
+<h2>Google广告</h2><div class="google-ads-post-wrapper"><div class="google-seat"><p>假装这里有广告</p></div><div class="google-ads-content"></div></div></div></div></article></div><div id="gitalk"></div><script>var gitalk = new Gitalk({
     clientID: 'df197d1e1761f7b45688',
     clientSecret: 'cfbd1df2464d6ce367281fdc437d60701867b30a',
     id: '2019-04-20 12:30:15',

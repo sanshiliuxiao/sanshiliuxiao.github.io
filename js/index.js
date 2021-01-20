@@ -687,7 +687,7 @@ const googleAds = {
         $(".google-ads-about-wrapper .google-ads-content").html("");
         $(".google-ads-about-wrapper .google-ads-content").html(html);
         (adsbygoogle = window.adsbygoogle || []).push({})
-      }, 2000);
+      }, 2000); 
     }
   }
 }
