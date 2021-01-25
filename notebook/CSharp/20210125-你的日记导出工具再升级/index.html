@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="ZH-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="referrer" content="no-referrer"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="author" content="椎咲良田"><meta name="copyright" content="椎咲良田"><meta name="og:image" content="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/avatar.jpg"><meta name="og:type" content="website"><meta name="og:site_name" content="椎咲良田"><meta name="og:url" content="sanshiliuxiao.top"><meta name="og：title" content="椎咲良田"><meta name="theme-color" content="#b854d4"><title>椎咲良田</title><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/favicon.jpg" type="image/x-icon"><link rel="stylesheet" href="/css/index.css?version=2.0.0"><link rel="stylesheet" href="/font/fontello.css?version=2.0.0"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira+Mono|Noto+Serif+SC&amp;amp;display=swap"><link rel="canonical" href="//sanshiliuxiao.top"><link rel="dns-prefetch" href="//cdn.jsdelivr.net"><link rel="stylesheet" href="/lib/gitalk/gitalk.min.css"><script src="/lib/gitalk/gitalk.min.js"></script><script src="/lib/valine/Valine.min.js"> </script></head><body><div class="layout"><header><div id="header"><div class="mobile-bg" style="background-image:url(https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/mobile.png);"></div><h1 class="title">椎咲良田</h1><h2 class="subtitle">快走吧 趁风停止之前</h2><nav class="menu"><a class="menu-item pjax-main-link" href="/"><li><i class="icon-index"></i><span>首页</span></li></a><a class="menu-item pjax-main-link" href="/archives/"><li><i class="icon-archives"></i><span>归档</span></li></a><a class="menu-item pjax-main-link" href="/categories/"><li><i class="icon-categories"></i><span>分类</span></li></a><a class="menu-item pjax-main-link" href="/tags/"><li><i class="icon-tags"></i><span>标签</span></li></a><a class="menu-item pjax-main-link" href="/books/"><li><i class="icon-books"></i><span>书单</span></li></a><a class="menu-item pjax-main-link" href="/inspirations/"><li><i class="icon-inspiration"></i><span>灵感</span></li></a><a class="menu-item pjax-main-link" href="/friends/"><li><i class="icon-friends"></i><span>友链</span></li></a><a class="menu-item pjax-main-link" href="/about/"><li><i class="icon-about"></i><span>关于</span></li></a></nav></div></header><main><div class="main-wrapper"></div><div class="pjax-main-page"><div class="post"><article class="post-article"><div class="post-header"><img class="default-image" src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/postDefaultImage .png"><div class="post-head"><div class="post-title-wrapper"><h1 class="post-title">你的日记导出工具再升级</h1></div><div class="post-meta"><span class="post-date"><i class="icon-calendar"></i><span class="date timeago" datetime="2021-01-25T01:21:21.000Z"></span></span><span class="post-hot"><i class="icon-fire"></i><span class="leancloud_visitors" id="/notebook/CSharp/20210125-你的日记导出工具再升级/" data-flag-title="你的日记导出工具再升级">热度<span class="leancloud-visitors-count">0</span>℃</span></span><span class="post-tags"><i class="icon-tag"></i><span class="tag">CSharp</span><span class="tag">WPF</span></span><span class="post-categories"><i class="icon-bookmark-empty"></i><span class="category">笔记本</span></span></div></div></div><div class="post-content heti"><div class="markdown"><p>《你的日记》官方依旧没有推出日记的导出功能，我闲着没事，又升级了一下导出工具。</p>
+<h2 id="太长不看版"><a href="#太长不看版" class="headerlink" title="太长不看版"></a>太长不看版</h2>
+    <div class="img-box">
+      <img class="img-zoomable" src="0.png">
+      <span>◭ 软件运行效果</span>
+    </div>
+  
+
+<blockquote>
+<p>因为没开图片会员，所以还是不知道图片到怎么导出（可能也不是很难导出吧）</p>
+<p>GitHub: <a href="https://github.com/sanshiliuxiao/DiaryExport" target="_blank" rel="noopener">https://github.com/sanshiliuxiao/DiaryExport</a></p>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>旧文有提到(<a href="https://sanshiliuxiao.top/notebook/CSharp/20201009-%E4%BD%A0%E7%9A%84%E6%97%A5%E8%AE%B0%E5%AF%BC%E5%87%BA%E5%B7%A5%E5%85%B7/">你的日记导出工具</a>),《你的日记》是一个非常不错的日记软件，但它没有导出功能。</p>
+<p>先来看看旧版和新版的代码结构对比，再来分析一下新版的代码究竟做了怎么样的优化。</p>
+
+    <div class="img-box">
+      <img class="img-zoomable" src="1.png">
+      <span>◭ 代码结构对比图</span>
+    </div>
+  
+
+<p>这次咱终于用上了 WPF 的 <code>MVVM</code> 模式 进行数据绑定，同时也用上了 WPF 中的 <code>Command</code> 命令进行特定功能的执行，从而将绝大部分的代码，给分离到 <code>MainViewModel.cs</code> 文件中。</p>
+<p>对于简单的 MVVM 来说，最核心的几行代码如下：</p>
+<pre><code class="csharp">
+// 如果有更复杂的需求，有一个非常强大的库叫做 prism，真的非常强。
+
+// MainViewModel .cs
+
+public class MainViewModel: INotifyPropertyChanged
+{
+    // OnPropertyChanged 方法执行会导致 PropertyChanged 事件触发，从而去通知 UI 进行更新
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    private string _diaryDate;
+    public string DiaryDate
+    {
+        get { return _diaryDate; }
+        set
+        {
+            _diaryDate = value;
+            OnPropertyChanged(nameof(DiaryDate));
+        }
+    }
+
+    // 对于集合来说，需要使用 ObservableCollection
+    private ObservableCollection&lt;string&gt; _exportDiaryStatus = new ObservableCollection&lt;string&gt; { };
+    public ObservableCollection&lt;string&gt; ExportDiaryStatus
+    {
+        get { return _exportDiaryStatus; }
+        set
+        {
+            _exportDiaryStatus = value;
+            OnPropertyChanged(nameof(ExportDiaryStatus));
+        }
+    }
+
+}
+
+
+// MainWindow.xaml.cs
+
+public partial class MainWindow : Window
+{
+    public MainWindow()
+    {
+        InitializeComponent();
+        var mainViewModel = new MainViewModel();
+        // 把 ViewModel 绑定到 DataContext 上
+        this.MainNode.DataContext = mainViewModel;
+    }
+}
+
+// MainWindow.xaml
+
+// 取了个名 MainNode
+&lt;Window x:Class=&quot;DiaryExport.MainWindow&quot; Name=&quot;MainNode&quot;&gt;
+&lt;/Window&gt;
+</code></pre>
+<p>对于数据库，采用的是轻量级的 SQLite， 至于 ORM 当然选择的是官方出品的 <code>Microsoft.EntityFrameworkCore</code>. 虽然市面上也有很多优秀的 ORM 框架，性能更强，但架不住 官方出品的这个库上手快呀。</p>
+<p>不过一般都是使用它的拓展包，这里使用的是 <code>Microsoft.EntityFrameworkCore.Sqlite</code>， 同时还得搭配对应的迁移工具 <code>Microsoft.EntityFrameworkCore.Tools</code>。</p>
+<p>对应数据库方面的操作都放在 <code>DbServices.cs</code> 文件中, 对于从接口获取数据的操作都放在 <code>ExportDiaryServices.cs</code>。</p>
+<p>（PS： 当时是想先建立接口，使用接口进行依赖注入，从而方便以后的维护。但其实吧，感觉不是很有必要，直接生成实例注入进去也行。）</p>
+<p>另外移除了第三方的 <code>Polly</code> 库，自己手写了一个失败重新尝试的函数，其实就是一个递归，够用就行。因为如果发生了错误，那么 <code>Flurl</code> 是会抛出异常的，这里就是针对异常，进行捕获。再次然后再次去尝试。</p>
+<pre><code class="Csharp">public async Task&lt;DiaryModel&gt; GetDiaryPrevById(string id)
+{
+    try
+    {
+        var diaryModel = await new Flurl.Url(_baseUrl)
+                                    .AppendPathSegment($&quot;/diary/prev/{id}/&quot;)
+                                    .WithHeader(&quot;auth&quot;, _loginModel.Token)
+                                    .GetAsync()
+                                    .ReceiveJson&lt;DiaryModel&gt;();
+        if (diaryModel.Diary != null)
+        {
+            ExportDiaryStatusEvent?.Invoke($&quot;获取上一篇日记成功：id: {diaryModel.Diary.Id}&quot;);
+
+        }
+        ResetTryCount();
+        return diaryModel;
+    }
+    catch (Exception)
+    {
+        _currentTryCount++;
+        ExportDiaryStatusEvent?.Invoke($&quot;获取上一篇日记失败...正在 {_currentTryCount} 尝试&quot;);
+        await Task.Delay(_currentTryCount * 1000);
+
+        if (_currentTryCount &lt; _maxTryCount)
+        {
+            return await GetDiaryPrevById(id);
+        }
+        ExportDiaryStatusEvent?.Invoke($&quot;获取上一篇日记失败...终止请求&quot;);
+        ResetTryCount();
+        return default(DiaryModel);
+    }
+
+}</code></pre>
+<p>从上面的例子中还能瞥见异步编程和事件的身影。</p>
+<p><code>async/await</code> 关键字是 C# 异步编程的语法糖，它能够让我们写出很简单的异步代码，它是基于 TAP 模式的异步编程，即 Task-based Asynchronous Pattern。而之前我们多是采用基于事件的异步编程，即 Event-based Asynchronous Pattern。</p>
+<p>在 C# 中 事件是由 <code>event</code> 关键字进行修饰的委托，而委托可以立即为一种函数指针，但更安全。执行委托时，其实是在执行某个函数，只不过执行的环境在<strong>这个作用域</strong>（可以获取到此作用域的信息，参数传入），同时又能够获得那个函数作用域的信息（需要提前放入），最终的结果能够影响那个函数本身的作用域里的数据。</p>
+<p>最后一点，学到了一个 <code>Newtonsoft.Json</code> 的一个小技巧。只需要使用  <code>JsonProperty</code> 属性，就可以使把接口处获取到的数据，但其属性命名不规范，转化成规范的 CSharp 的属性命名方式。</p>
+<pre><code class="Csharp">public class DiaryInfo
+    {
+        [JsonProperty(&quot;deleteddate&quot;)]
+        public string Deleteddate { get; set; }
+        [JsonProperty(&quot;date_word&quot;)]
+        public string DataWord { get; set; }
+        [JsonProperty(&quot;createddate&quot;)]
+        public DateTime Createddate { get; set; }
+    }</code></pre>
+<h2>Google广告</h2><div class="google-ads-post-wrapper"><div class="google-seat"><p>假装这里有广告</p></div><div class="google-ads-content"></div></div></div></div></article></div><div id="gitalk"></div><script>var gitalk = new Gitalk({
+    clientID: 'df197d1e1761f7b45688',
+    clientSecret: 'cfbd1df2464d6ce367281fdc437d60701867b30a',
+    id: '2021-01-25 09:21:21',
+    repo: 'comments',
+    owner: 'sanshiliuxiao',
+    admin: 'df197d1e1761f7b45688'
+})
+gitalk.render('gitalk')</script></div><div class="pjax-main-loading loading"><img class="loading-image" src="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/loading.gif"></div></main><footer><div class="footer site-info"><p><i class="icon-copyright"></i><span>2018</span>&minus;<span>2021</span>&nbsp;&nbsp;&nbsp;<i class="icon-heart"></i>&nbsp;&nbsp;<span>椎咲良田</span></p><p><a href="https://github.com/sanshiliuxiao/hexo-theme-aurora.git" target="_blank">hexo-theme-Aurora</a>&nbsp; | &nbsp;快走吧 趁风停止之前</p></div></footer></div><div id="sakura-panel"><img class="sakura-icon" src="https://i.loli.net/2020/12/27/rPA2XaEJsnq5UIC.png" alt="sakura"><div class="sakura-mask"></div><div class="sakura-container"><div class="wrapper"><div class="short-line"><div class="line"></div><div class="line"></div></div><div class="main"><div class="body"><div class="swiper-wrapper"><ul class="swiper"><li class="swiper-item"><div class="header"><h2>联系方式</h2></div><div class="container"><div class="item"><h3>Q Q</h3><img class="qr-code" src="/images/qq.png"></div><div class="item"><h3>微信</h3><img class="qr-code" src="/images/vx.png"></div></div></li></ul></div></div><div class="footer"><p class="like"><span>已有 </span><span class="like-num leancloud-app-like">0</span><span> 人点赞了哦！</span></p><div class="star" data-title="点赞一下 (&lt;ゝω・)☆"></div></div></div><div class="long-line"><div class="line"></div><div class="line"></div></div></div></div></div><div class="bg"><div class="pc-dynamic-bg"><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/1.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/2.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/3.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/4.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/5.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/6.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/7.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/8.jpg"></span><span class="image" data-image="https://cdn.jsdelivr.net/gh/sanshiliuxiao/blog-static/theme/9.jpg"></span></div></div><span class="back-to-top"></span><div class="leancloud"><script src="/js/third-party/leancloud.min.js?version=2.0.0"></script><div class="leancloud-app-id" leancloud-app-id="QAIKomD08e9fmVRQP4tkzUDf-MdYXbMMI"></div><div class="leancloud-app-key" leancloud-app-key="vi0TViY0HvYocUR3HxKGd1l9"></div><div class="leancloud-app-hot"></div><div class="leancloud-app-visitor"></div></div><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-ad-client="ca-pub-9441161448418285"></script><div class="google-ads-ad-client" data-ads-ad-client="ca-pub-9441161448418285"></div><div class="google-ads-post-page" data-ads-solt="3867936552"></div><div class="google-ads-about-page" data-ads-solt="6860833347"></div><link rel="stylesheet" href="/lib/APlayer/APlayer.min.css"><script src="/lib/APlayer/APlayer.min.js"></script><div id="aplayer"></div><script>let list = JSON.parse('[{"name":"Once more","artist":"阿保剛","url":"https://files.catbox.moe/13boxb.mp3","cover":"https://i.loli.net/2019/04/18/5cb87157c617e.jpg"},{"name":"All or None","artist":"阿保剛","url":"https://files.catbox.moe/4x69y9.mp3","cover":"https://i.loli.net/2019/04/18/5cb87157b537a.jpg"},{"name":"Karma","artist":"阿保剛","url":"https://files.catbox.moe/r5dsuh.mp3","cover":"https://i.loli.net/2019/04/18/5cb871583cfb7.jpg"},{"name":"星の奏でる歌","artist":"阿保剛","url":"https://files.catbox.moe/m1wd57.mp3","cover":"https://i.loli.net/2019/04/18/5cb871585123b.jpg"}]')
+  const ap = new APlayer({
+      container: document.getElementById('aplayer'),
+      theme: '#b28fce',
+      audio: list,
+      fixed: true
+  });
+  ap.list.show()
+</script><script src="/js/third-party/jquery.min.js?version=2.0.0"></script><script src="/js/third-party/isMobile.min.js?version=2.0.0"></script><script src="/js/third-party/timeago.min.js?version=2.0.0"></script><script src="/js/third-party/pjax.min.js?version=2.0.0"></script><script src="/js/third-party/zooming.min.js?version=2.0.0"></script><script src="/js/third-party/backstretch.min.js?version=2.0.0"></script><script src="/js/highlight.min.js?version=2.0.0"></script><script src="/js/index.js?version=2.0.0"></script></body></html>
