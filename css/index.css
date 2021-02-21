@@ -2040,51 +2040,85 @@ body,
     box-shadow: 0 14px 38px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.06);
   }
 }
+.waline-wrapper,
 .valine-wrapper {
   border-radius: 3px;
+  width: 99%;
+  margin: 0 auto;
   margin-top: 12px;
   padding: 12px;
   background-color: rgba(255,255,255,0.65);
 }
 @media screen and (min-width: 768px) {
+  .waline-wrapper,
   .valine-wrapper {
     background-color: rgba(255,255,255,0.65);
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.24);
   }
 }
-.valine-wrapper #valine {
+.waline-wrapper #waline,
+.valine-wrapper #waline,
+.waline-wrapper .valine,
+.valine-wrapper .valine {
   background-color: rgba(255,255,255,0.65);
 }
-.valine-wrapper #valine > * {
+.waline-wrapper #waline > *,
+.valine-wrapper #waline > *,
+.waline-wrapper .valine > *,
+.valine-wrapper .valine > * {
   padding: 0 12px;
 }
-.valine-wrapper #valine .vwrap {
+.waline-wrapper #waline .vwrap,
+.valine-wrapper #waline .vwrap,
+.waline-wrapper .valine .vwrap,
+.valine-wrapper .valine .vwrap {
   border: 0px !important;
 }
-.valine-wrapper #valine .vwrap .vheader {
+.waline-wrapper #waline .vwrap .vheader,
+.valine-wrapper #waline .vwrap .vheader,
+.waline-wrapper .valine .vwrap .vheader,
+.valine-wrapper .valine .vwrap .vheader {
   display: flex;
   justify-content: space-between;
 }
-.valine-wrapper #valine .vwrap .vheader > * {
+.waline-wrapper #waline .vwrap .vheader > *,
+.valine-wrapper #waline .vwrap .vheader > *,
+.waline-wrapper .valine .vwrap .vheader > *,
+.valine-wrapper .valine .vwrap .vheader > * {
   width: 30%;
   border: 1px dashed #dedede;
 }
-.valine-wrapper #valine .vwrap .vheader > *:hover {
+.waline-wrapper #waline .vwrap .vheader > *:hover,
+.valine-wrapper #waline .vwrap .vheader > *:hover,
+.waline-wrapper .valine .vwrap .vheader > *:hover,
+.valine-wrapper .valine .vwrap .vheader > *:hover {
   border-color: #000;
 }
-.valine-wrapper #valine .vwrap .vheader > *:focus {
+.waline-wrapper #waline .vwrap .vheader > *:focus,
+.valine-wrapper #waline .vwrap .vheader > *:focus,
+.waline-wrapper .valine .vwrap .vheader > *:focus,
+.valine-wrapper .valine .vwrap .vheader > *:focus {
   border-color: #000;
 }
-.valine-wrapper #valine .vwrap .vedit {
+.waline-wrapper #waline .vwrap .vedit,
+.valine-wrapper #waline .vwrap .vedit,
+.waline-wrapper .valine .vwrap .vedit,
+.valine-wrapper .valine .vwrap .vedit {
   padding: 0 12px;
   margin-top: 12px;
   position: relative;
   z-index: 1;
 }
-.valine-wrapper #valine .vwrap .vedit:hover::after {
+.waline-wrapper #waline .vwrap .vedit:hover::after,
+.valine-wrapper #waline .vwrap .vedit:hover::after,
+.waline-wrapper .valine .vwrap .vedit:hover::after,
+.valine-wrapper .valine .vwrap .vedit:hover::after {
   border: 1px dashed #000;
 }
-.valine-wrapper #valine .vwrap .vedit::after {
+.waline-wrapper #waline .vwrap .vedit::after,
+.valine-wrapper #waline .vwrap .vedit::after,
+.waline-wrapper .valine .vwrap .vedit::after,
+.valine-wrapper .valine .vwrap .vedit::after {
   content: '';
   border: 1px dashed #dedede;
   position: absolute;
@@ -2094,17 +2128,23 @@ body,
   height: 100%;
   z-index: -1;
 }
-#veditor:focus + .valine-wrapper #valine .vwrap .vedit::after {
+#veditor:focus + .waline-wrapper #waline .vwrap .vedit::after,
+#veditor:focus + .valine-wrapper #waline .vwrap .vedit::after,
+#veditor:focus + .waline-wrapper .valine .vwrap .vedit::after,
+#veditor:focus + .valine-wrapper .valine .vwrap .vedit::after {
   background: #00f;
 }
-.valine-wrapper #valine .vwrap .vedit button {
+.waline-wrapper #waline .vwrap .vedit button,
+.valine-wrapper #waline .vwrap .vedit button,
+.waline-wrapper .valine .vwrap .vedit button,
+.valine-wrapper .valine .vwrap .vedit button {
   color: #000;
   background: #f0ffff;
 }
-.valine-wrapper #valine .vempty {
-  display: none !important;
-}
-.valine-wrapper #valine .vpower.txt-right {
+.waline-wrapper #waline .vempty,
+.valine-wrapper #waline .vempty,
+.waline-wrapper .valine .vempty,
+.valine-wrapper .valine .vempty {
   display: none !important;
 }
 #sakura-panel {
