@@ -1,452 +1,3 @@
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
-/* Document
-   ========================================================================== */
-
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
-
- html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-}
-
-/* Sections
-   ========================================================================== */
-
-/**
- * Remove the margin in all browsers.
- */
-
-body {
-  margin: 0;
-}
-
-/**
- * Render the `main` element consistently in IE.
- */
-
-main {
-  display: block;
-}
-
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-/* Grouping content
-   ========================================================================== */
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-
-hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/* Text-level semantics
-   ========================================================================== */
-
-/**
- * Remove the gray background on active links in IE 10.
- */
-
-a {
-  background-color: transparent;
-}
-
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-
-abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
-}
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/**
- * Add the correct font size in all browsers.
- */
-
-small {
-  font-size: 80%;
-}
-
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/* Embedded content
-   ========================================================================== */
-
-/**
- * Remove the border on images inside links in IE 10.
- */
-
-img {
-  border-style: none;
-}
-
-/* Forms
-   ========================================================================== */
-
-/**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
-}
-
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-
-button,
-input { /* 1 */
-  overflow: visible;
-}
-
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
-
-button,
-select { /* 1 */
-  text-transform: none;
-}
-
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
-
-/**
- * Remove the inner border and padding in Firefox.
- */
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-/**
- * Restore the focus styles unset by the previous rule.
- */
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-/**
- * Correct the padding in Firefox.
- */
-
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
-}
-
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
- */
-
-legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
-}
-
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-
-progress {
-  vertical-align: baseline;
-}
-
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
-
-textarea {
-  overflow: auto;
-}
-
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
-
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
-}
-
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-
-[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
-}
-
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
-
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
-}
-
-/* Interactive
-   ========================================================================== */
-
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
-
-details {
-  display: block;
-}
-
-/*
- * Add the correct display in all browsers.
- */
-
-summary {
-  display: list-item;
-}
-
-/* Misc
-   ========================================================================== */
-
-/**
- * Add the correct display in IE 10+.
- */
-
-template {
-  display: none;
-}
-
-/**
- * Add the correct display in IE 10.
- */
-
-[hidden] {
-  display: none;
-}
-/* Base16 Atelier Dune Dark - Theme */
-/* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/dune) */
-/* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
-
-/* Atelier-Dune Comment */
-.hljs-comment,
-.hljs-quote {
-  color: #999580;
-}
-
-/* Atelier-Dune Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-attribute,
-.hljs-tag,
-.hljs-name,
-.hljs-regexp,
-.hljs-link,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class {
-  color: #d73737;
-}
-
-/* Atelier-Dune Orange */
-.hljs-number,
-.hljs-meta,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params {
-  color: #cd5da0;
-}
-
-/* Atelier-Dune Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet {
-  color: #60ac39;
-}
-
-/* Atelier-Dune Blue */
-.hljs-title,
-.hljs-section {
-  color: #6684e1;
-}
-
-/* Atelier-Dune Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-  color: $purple-deep;
-}
-
-.hljs {
-  display: block;
-  background: #20201d;
-  overflow-x: auto;
-  color: #a6a28c;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
-
-/* 覆盖 */
-
-.hljs {
-  background-color: transparent;
-}
-
-.hljs-ln{
-  border-collapse:collapse
-}
-.hljs-ln-n:before{
-  content:attr(data-line-number)
-}
-
-.hljs table {
-  overflow-x: auto;
-  margin: 0;
-  border-spacing: 0;
-}
-.hljs table tr {
-  border: none;
-}
-td.hljs-ln-numbers {
-  padding-right: 16px;
-  text-align: center;
-}
-
-/*!
- * Project: Heti
- * URL: https://github.com/sivan/heti
- * Author: Sivan [sun.sivan@gmail.com]
- */@font-face{font-family:"Heti Hei";src:local("PingFang SC Regular"),local("PingFang TC Regular"),local("Hiragino Sans GB W3"),local("Heiti SC Regular"),local("Heiti TC Regular"),local("Microsoft YaHei"),local("Microsoft Jhenghei"),local("Source Han Sans CN Regular"),local("Source Han Sans HK Regular"),local("Source Han Sans TW Regular"),local("Source Han Sans JP Regular"),local("Source Han Sans KR Regular"),local("Noto Sans CJK SC Regular"),local("Noto Sans CJK TC Regular"),local("Noto Sans CJK JP Regular"),local("Noto Sans CJK KR Regular"),local("WenQuanYi Micro Hei"),local("Droid Sans Fallback")}@font-face{font-family:"Heti Hei";font-weight:200;src:local("PingFang SC Light"),local("PingFang TC Light"),local("Heiti SC Light"),local("Heiti TC Light"),local("Microsoft YaHei Light"),local("Microsoft Jhenghei Light"),local("Source Han Sans CN Light"),local("Source Han Sans HK Light"),local("Source Han Sans TW Light"),local("Source Han Sans JP Light"),local("Source Han Sans KR Light"),local("Noto Sans CJK SC Light"),local("Noto Sans CJK TC Light"),local("Noto Sans CJK JP Light"),local("Noto Sans CJK KR Light")}@font-face{font-family:"Heti Hei";font-weight:600;src:local("PingFang SC Medium"),local("Hiragino Sans GB W6"),local("PingFang TC Medium"),local("Heiti SC Medium"),local("Heiti TC Medium"),local("Microsoft YaHei Bold"),local("Microsoft Jhenghei Bold"),local("Source Han Sans CN Bold"),local("Source Han Sans HK Bold"),local("Source Han Sans TW Bold"),local("Source Han Sans JP Bold"),local("Source Han Sans KR Bold"),local("Noto Sans CJK SC Bold"),local("Noto Sans CJK TC Bold"),local("Noto Sans CJK JP Bold"),local("Noto Sans CJK KR Bold")}@font-face{font-family:"Heti Hei Black";font-weight:800;src:local("Lantinghei SC Heavy"),local("Lantinghei TC Heavy"),local("PingFang SC Semibold"),local("PingFang TC Semibold"),local("Hiragino Sans GB W6"),local("Heiti SC Medium"),local("Heiti TC Medium"),local("Microsoft YaHei Bold"),local("Microsoft Jhenghei Bold"),local("Source Han Sans CN Heavy"),local("Source Han Sans HK Heavy"),local("Source Han Sans TW Heavy"),local("Source Han Sans JP Heavy"),local("Source Han Sans KR Heavy"),local("Noto Sans CJK SC Heavy"),local("Noto Sans CJK TC Heavy"),local("Noto Sans CJK JP Heavy"),local("Noto Sans CJK KR Heavy"),local("Droid Sans Fallback")}@font-face{font-family:"Heti Song";src:local("Songti SC Regular"),local("Songti TC Regular"),local("SimSun")}@font-face{font-family:"Heti Song";font-weight:200;src:local("Songti SC Light"),local("Songti TC Light"),local(STSong),local("SimSun")}@font-face{font-family:"Heti Song";font-weight:600;src:local("Songti SC Bold"),local("Songti TC Bold"),local("SimSun")}@font-face{font-family:"Heti Song Black";font-weight:800;src:local("Songti SC Black"),local("SimSun")}@font-face{font-family:"Heti Kai";src:local("Kaiti SC Regular"),local("Kaiti TC Regular"),local("BiauKai")}@font-face{font-family:"Heti Kai";font-weight:600;src:local("Kaiti SC Bold"),local("Kaiti TC Bold")}@font-face{font-family:"Heti Kai Black";font-weight:800;src:local("Kaiti SC Black"),local("Kaiti TC Black")}.heti{max-width:42em;font-size:16px;font-weight:400;-webkit-font-smoothing:subpixel-antialiased;line-height:1.5;overflow-wrap:break-word;word-wrap:break-word;hyphens:auto}.heti::before,.heti::after{content:"";display:table}.heti::after{clear:both}.heti>*:first-child,.heti section>*:first-child,.heti td>*:first-child{margin-block-start:0 !important}.heti>*:last-child,.heti section>*:last-child,.heti td>*:last-child{margin-block-end:0 !important}.heti blockquote{margin-block-start:12px;margin-block-end:24px;margin-inline-start:32px;margin-inline-end:32px;padding-block-start:12px;padding-block-end:12px;padding-inline-start:16px;padding-inline-end:16px;background-color:rgba(0,0,0,0.054)}@media (prefers-color-scheme: dark){.heti blockquote{background-color:rgba(255,255,255,0.054)}}.heti figure{display:block;text-align:center}.heti figure>img{display:block;margin-inline-start:auto;margin-inline-end:auto}.heti hr{width:30%;height:1px;margin-block-start:48px;margin-block-end:47px;margin-inline-start:auto;margin-inline-end:auto;border:0;background-color:#ccc}@media (prefers-color-scheme: dark){.heti hr{background-color:#404040}}.heti p{margin-block-start:12px;margin-block-end:24px;text-align:justify}.heti p:not(:lang(zh)):not(:lang(ja)):not(:lang(kr)),.heti p:not(:lang(zh)){text-align:start}.heti pre{margin-block-start:12px;margin-block-end:12px;margin-inline-start:0;margin-inline-end:0;padding-block-start:12px;padding-block-end:12px;padding-inline-start:16px;padding-inline-end:16px;overflow:auto;font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";white-space:pre;word-wrap:normal;border-radius:4px;background-color:rgba(0,0,0,0.054)}@media (prefers-color-scheme: dark){.heti pre{background-color:rgba(255,255,255,0.054)}}.heti pre code{margin:0;padding:0;border:0;border-radius:0;background-color:transparent;color:inherit}.heti h1,.heti h2,.heti h3,.heti h4,.heti h5,.heti h6{position:relative;margin:0;margin-block-start:24px;margin-block-end:12px;font-weight:600}.heti h1{margin-block-end:24px;font-size:32px;line-height:48px}.heti h2{font-size:24px;line-height:36px}.heti h3{font-size:20px;line-height:36px}.heti h4{font-size:18px;line-height:24px}.heti h5{font-size:16px;line-height:24px}.heti h6{font-size:14px;line-height:24px}.heti h1,.heti h2,.heti h3{letter-spacing:0.05em}.heti h1:not(:lang(zh)):not(:lang(ja)):not(:lang(kr)),.heti h1:not(:lang(zh)),.heti h2:not(:lang(zh)):not(:lang(ja)):not(:lang(kr)),.heti h2:not(:lang(zh)),.heti h3:not(:lang(zh)):not(:lang(ja)):not(:lang(kr)),.heti h3:not(:lang(zh)){letter-spacing:0}.heti h1+h2,.heti h2+h3,.heti h3+h4,.heti h4+h5,.heti h5+h6{margin-block-start:12px}.heti ul,.heti ol,.heti dl{margin-block-start:12px;margin-block-end:24px}.heti ul,.heti ol{padding-inline-start:32px}.heti ul ul,.heti ul ol,.heti ol ul,.heti ol ol{margin-block-start:0;margin-block-end:0}.heti ul{list-style-type:disc}.heti ol{list-style-type:decimal}.heti ul ul,.heti ol ul{list-style-type:circle}.heti ul ul ul,.heti ul ol ul,.heti ol ul ul,.heti ol ol ul{list-style-type:square}.heti li{list-style-type:unset}.heti table{box-sizing:border-box;table-layout:fixed;margin-block-start:12px;margin-block-end:24px;margin-inline-start:auto;margin-inline-end:auto;border-collapse:collapse;border-width:1px;border-style:solid;border-color:#ccc;word-break:break-word}@media (prefers-color-scheme: dark){.heti table{border-color:#404040}}.heti th,.heti td{padding-block-start:6px;padding-block-end:6px;padding-inline-start:8px;padding-inline-end:8px;border-width:1px;border-style:solid;border-color:#ccc}@media (prefers-color-scheme: dark){.heti th,.heti td{border-color:#404040}}.heti caption{caption-side:bottom;margin-block-start:2px;margin-block-end:-4px;font-size:14px;line-height:24px}.heti a{text-decoration:none}.heti a:hover{padding-block-end:1px;border-block-end:1px solid currentColor;text-decoration:none}.heti abbr[title]{padding-block-end:1px;border-block-end:1px dotted;text-decoration:none;cursor:help}.heti b,.heti strong{font-weight:600}.heti code{margin-inline-start:0.25em;margin-inline-end:0.25em;font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:0.875em}.heti dfn{font-weight:600}.heti dfn:not(:lang(zh)):not(:lang(ja)):not(:lang(kr)),.heti dfn:not(:lang(zh)){font-weight:400}.heti em{font-weight:600}.heti figcaption{display:inline-block;vertical-align:top;font-size:14px;text-align:start}.heti i{font-style:italic}.heti ins,.heti u{padding-block-end:1px;border-block-end:1px solid;text-decoration:none}.heti mark{padding-block-start:2px;padding-block-end:2px;padding-inline-start:1px;padding-inline-end:1px;margin-inline-start:1px;margin-inline-end:1px;background-color:rgba(255,247,0,0.88);color:inherit}@media (prefers-color-scheme: dark){.heti mark{background-color:rgba(77,74,0,0.88)}}.heti q{quotes:"「" "」" "『" "』"}.heti q:not(:lang(zh)):not(:lang(ja)):not(:lang(kr)),.heti q:not(:lang(zh)){quotes:initial;quotes:auto}.heti rt{font-size:0.875em;font-weight:400}.heti small{font-size:0.875em}.heti strong{font-weight:600}.heti sub,.heti sup{position:relative;margin-inline-start:0.25em;margin-inline-end:0.25em;font-size:0.75em;font-family:"Helvetica Neue",Helvetica,Arial,"Heti Hei",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-style:normal;line-height:1;vertical-align:baseline}.heti sub{bottom:-0.25em}.heti sup{top:-0.5em}.heti sup:target,.heti sup a:target{background-color:#dbedff}@media (prefers-color-scheme: dark){.heti sup:target,.heti sup a:target{background-color:#3a6188}}.heti summary{padding-inline-start:1em;outline:0;cursor:pointer}.heti summary::-webkit-details-marker{width:0.6em;margin-inline-end:0.4em}.heti u[title]{cursor:help;border-block-end-width:3px;border-block-end-style:double;border-block-end-color:rgba(0,0,0,0.54)}@media (prefers-color-scheme: dark){.heti u[title]{border-block-end-color:rgba(255,255,255,0.54)}}.heti address,.heti cite,.heti dfn,.heti dt,.heti em{font-style:normal}.heti address:not(:lang(zh)):not(:lang(ja)):not(:lang(kr)),.heti address:not(:lang(zh)),.heti cite:not(:lang(zh)):not(:lang(ja)):not(:lang(kr)),.heti cite:not(:lang(zh)),.heti dfn:not(:lang(zh)):not(:lang(ja)):not(:lang(kr)),.heti dfn:not(:lang(zh)),.heti dt:not(:lang(zh)):not(:lang(ja)):not(:lang(kr)),.heti dt:not(:lang(zh)),.heti em:not(:lang(zh)):not(:lang(ja)):not(:lang(kr)),.heti em:not(:lang(zh)){font-style:italic}.heti abbr[title],.heti del,.heti ins,.heti s,.heti u{margin-inline-start:1px;margin-inline-end:1px}.heti,.heti--sans{font-family:"Helvetica Neue",Helvetica,Arial,"Heti Hei",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}.heti--serif{font-family:"Times New Roman",Times,"Heti Song",serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}.heti--classic{font-family:"Times New Roman",Times,"Heti Song",serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}.heti--classic h1,.heti--classic h2,.heti--classic h3,.heti--classic h4,.heti--classic h5,.heti--classic h6{font-family:"Times New Roman",Times,"Heti Kai Black",serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-weight:800}.heti--classic blockquote,.heti--classic cite,.heti--classic q{font-family:"Times New Roman",Times,"Heti Kai",serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}.heti--classic em,.heti--classic figcaption,.heti--classic caption,.heti--classic th{font-family:"Helvetica Neue",Helvetica,Arial,"Heti Hei",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}.heti--hei{font-family:"Helvetica Neue",Helvetica,Arial,"Heti Hei",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}.heti--song{font-family:"Times New Roman",Times,"Heti Song",serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}.heti--kai{font-family:"Times New Roman",Times,"Heti Kai",serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}.heti--columns-1,.heti--columns-2,.heti--columns-3,.heti--columns-4,.heti--columns-16em,.heti--columns-20em,.heti--columns-24em,.heti--columns-28em,.heti--columns-32em,.heti--columns-36em,.heti--columns-40em,.heti--columns-44em,.heti--columns-48em,.heti comma{max-width:none;column-gap:2em}.heti--columns-1 p,.heti--columns-2 p,.heti--columns-3 p,.heti--columns-4 p,.heti--columns-16em p,.heti--columns-20em p,.heti--columns-24em p,.heti--columns-28em p,.heti--columns-32em p,.heti--columns-36em p,.heti--columns-40em p,.heti--columns-44em p,.heti--columns-48em p,.heti comma p{margin-block-start:6px;margin-block-end:12px;text-indent:2em}.heti--columns-1{column-count:1}.heti--columns-2{column-count:2}.heti--columns-3{column-count:3}.heti--columns-4{column-count:4}.heti--columns-16em{column-width:16em}.heti--columns-20em{column-width:20em}.heti--columns-24em{column-width:24em}.heti--columns-28em{column-width:28em}.heti--columns-32em{column-width:32em}.heti--columns-36em{column-width:36em}.heti--columns-40em{column-width:40em}.heti--columns-44em{column-width:44em}.heti--columns-48em{column-width:48em}.heti--vertical{max-width:none;max-height:42em;writing-mode:vertical-rl;letter-spacing:0.125em}.heti--vertical h1,.heti--vertical h2,.heti--vertical h3,.heti--vertical h4,.heti--vertical h5,.heti--vertical h6{text-align:start}.heti--ancient,.heti--poetry{font-family:"Times New Roman",Times,"Heti Song",serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}.heti--ancient h1,.heti--ancient h2,.heti--ancient h3,.heti--ancient h4,.heti--ancient h5,.heti--ancient h6,.heti--poetry h1,.heti--poetry h2,.heti--poetry h3,.heti--poetry h4,.heti--poetry h5,.heti--poetry h6{font-family:"Times New Roman",Times,"Heti Kai Black",serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-weight:800;text-align:center}.heti--ancient h1 .heti-meta,.heti--ancient h2 .heti-meta,.heti--ancient h3 .heti-meta,.heti--ancient h4 .heti-meta,.heti--ancient h5 .heti-meta,.heti--ancient h6 .heti-meta,.heti--poetry h1 .heti-meta,.heti--poetry h2 .heti-meta,.heti--poetry h3 .heti-meta,.heti--poetry h4 .heti-meta,.heti--poetry h5 .heti-meta,.heti--poetry h6 .heti-meta{font-weight:400}@media screen and (min-width: 640px){.heti--ancient h1 .heti-meta,.heti--ancient h2 .heti-meta,.heti--ancient h3 .heti-meta,.heti--ancient h4 .heti-meta,.heti--ancient h5 .heti-meta,.heti--ancient h6 .heti-meta,.heti--poetry h1 .heti-meta,.heti--poetry h2 .heti-meta,.heti--poetry h3 .heti-meta,.heti--poetry h4 .heti-meta,.heti--poetry h5 .heti-meta,.heti--poetry h6 .heti-meta{position:absolute;line-height:inherit;text-indent:0;display:inline;margin-block-start:4px;margin-inline-start:8px}}.heti--ancient .heti-meta,.heti--poetry .heti-meta{line-height:24px;text-align:center;text-indent:0}.heti--ancient p{text-indent:2em}.heti--poetry p{text-align:center;text-indent:0}.heti--annotation p{margin-block-start:0;margin-block-end:0;line-height:2.25;text-indent:2em}.heti--annotation em{-webkit-text-emphasis:filled circle;-webkit-text-emphasis-position:under;font-weight:400}.heti--annotation em:not(:lang(zh)):not(:lang(ja)):not(:lang(kr)),.heti--annotation em:not(:lang(zh)){-webkit-text-emphasis:none}.heti--annotation .heti-meta{margin-block-start:12px;margin-block-end:24px}.heti .heti-meta{display:block;text-indent:0}.heti .heti-verse{text-align:center;text-indent:0}.heti .heti-large{font-size:18px;line-height:24px}.heti .heti-x-large{font-size:20px;line-height:30px;letter-spacing:0.05em}.heti .heti-small{font-size:14px;line-height:24px}.heti .heti-x-small{font-size:12px;line-height:18px}.heti .heti-list-latin{list-style-type:upper-latin}.heti .heti-list-latin ol{list-style-type:lower-roman}.heti .heti-list-latin ol ol{list-style-type:lower-latin}.heti .heti-list-han{list-style-type:cjk-ideographic}.heti .heti-list-han ol{list-style-type:decimal}.heti .heti-list-han ol ol{list-style-type:decimal-leading-zero}.heti .heti-fn{margin-block-start:59px;border-block-start:1px solid;border-block-start-color:#ccc;font-size:14px;font-family:"Helvetica Neue",Helvetica,Arial,"Heti Hei",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";line-height:24px}@media (prefers-color-scheme: dark){.heti .heti-fn{border-block-start-color:#404040}}.heti .heti-fn ol{margin-block-start:12px;margin-block-end:0}.heti .heti-fn li:target{background-color:#dbedff}@media (prefers-color-scheme: dark){.heti .heti-fn li:target{background-color:#3a6188}}.heti .heti-hang{position:absolute;line-height:inherit;text-indent:0}.heti .heti-em{-webkit-text-emphasis:filled circle;-webkit-text-emphasis-position:under}.heti .heti-em:not(:lang(zh)):not(:lang(ja)):not(:lang(kr)),.heti .heti-em:not(:lang(zh)){-webkit-text-emphasis:none}.heti .heti-ruby--inline{display:inline-flex;flex-direction:column-reverse;height:1.5em}.heti .heti-ruby--inline rt{display:inline;margin-bottom:-0.25em;line-height:1;text-align:center}.heti heti-spacing{display:inline}.heti heti-spacing+sup,.heti heti-spacing+sub{margin-inline-start:0}.heti .heti-spacing-start{margin-inline-end:0.25em}.heti .heti-spacing-end{margin-inline-start:0.25em}.heti heti-adjacent{display:inline}.heti .heti-adjacent-half{margin-inline-end:-0.5em}.heti .heti-adjacent-quarter{margin-inline-end:-0.25em}
 @-moz-keyframes fadeInDown {
   0% {
     opacity: 0;
@@ -909,6 +460,38 @@ td.hljs-ln-numbers {
   }
   100% {
     transform: translateY(0vh);
+  }
+}
+@-moz-keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+@-o-keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
   }
 }
 * {
@@ -2040,85 +1623,52 @@ body,
     box-shadow: 0 14px 38px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.06);
   }
 }
-.waline-wrapper,
 .valine-wrapper {
   border-radius: 3px;
-  width: 99%;
-  margin: 0 auto;
   margin-top: 12px;
   padding: 12px;
   background-color: rgba(255,255,255,0.65);
 }
 @media screen and (min-width: 768px) {
-  .waline-wrapper,
   .valine-wrapper {
     background-color: rgba(255,255,255,0.65);
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.24);
   }
 }
-.waline-wrapper #waline,
-.valine-wrapper #waline,
-.waline-wrapper .valine,
-.valine-wrapper .valine {
+.valine-wrapper #valine {
   background-color: rgba(255,255,255,0.65);
 }
-.waline-wrapper #waline > *,
-.valine-wrapper #waline > *,
-.waline-wrapper .valine > *,
-.valine-wrapper .valine > * {
+.valine-wrapper #valine > * {
   padding: 0 12px;
 }
-.waline-wrapper #waline .vwrap,
-.valine-wrapper #waline .vwrap,
-.waline-wrapper .valine .vwrap,
-.valine-wrapper .valine .vwrap {
+.valine-wrapper #valine .vwrap {
   border: 0px !important;
 }
-.waline-wrapper #waline .vwrap .vheader,
-.valine-wrapper #waline .vwrap .vheader,
-.waline-wrapper .valine .vwrap .vheader,
-.valine-wrapper .valine .vwrap .vheader {
+.valine-wrapper #valine .vwrap .vheader {
   display: flex;
   justify-content: space-between;
+  padding: 0 12px;
 }
-.waline-wrapper #waline .vwrap .vheader > *,
-.valine-wrapper #waline .vwrap .vheader > *,
-.waline-wrapper .valine .vwrap .vheader > *,
-.valine-wrapper .valine .vwrap .vheader > * {
+.valine-wrapper #valine .vwrap .vheader > * {
   width: 30%;
   border: 1px dashed #dedede;
 }
-.waline-wrapper #waline .vwrap .vheader > *:hover,
-.valine-wrapper #waline .vwrap .vheader > *:hover,
-.waline-wrapper .valine .vwrap .vheader > *:hover,
-.valine-wrapper .valine .vwrap .vheader > *:hover {
+.valine-wrapper #valine .vwrap .vheader > *:hover {
   border-color: #000;
 }
-.waline-wrapper #waline .vwrap .vheader > *:focus,
-.valine-wrapper #waline .vwrap .vheader > *:focus,
-.waline-wrapper .valine .vwrap .vheader > *:focus,
-.valine-wrapper .valine .vwrap .vheader > *:focus {
+.valine-wrapper #valine .vwrap .vheader > *:focus {
   border-color: #000;
 }
-.waline-wrapper #waline .vwrap .vedit,
-.valine-wrapper #waline .vwrap .vedit,
-.waline-wrapper .valine .vwrap .vedit,
-.valine-wrapper .valine .vwrap .vedit {
-  padding: 0 12px;
-  margin-top: 12px;
+.valine-wrapper #valine .vwrap .vedit {
+  padding: 12px;
+  margin: 12px;
   position: relative;
   z-index: 1;
 }
-.waline-wrapper #waline .vwrap .vedit:hover::after,
-.valine-wrapper #waline .vwrap .vedit:hover::after,
-.waline-wrapper .valine .vwrap .vedit:hover::after,
-.valine-wrapper .valine .vwrap .vedit:hover::after {
+.valine-wrapper #valine .vwrap .vedit:hover::after {
   border: 1px dashed #000;
 }
-.waline-wrapper #waline .vwrap .vedit::after,
-.valine-wrapper #waline .vwrap .vedit::after,
-.waline-wrapper .valine .vwrap .vedit::after,
-.valine-wrapper .valine .vwrap .vedit::after {
+.valine-wrapper #valine .vwrap .vedit::after {
   content: '';
   border: 1px dashed #dedede;
   position: absolute;
@@ -2128,23 +1678,90 @@ body,
   height: 100%;
   z-index: -1;
 }
-#veditor:focus + .waline-wrapper #waline .vwrap .vedit::after,
-#veditor:focus + .valine-wrapper #waline .vwrap .vedit::after,
-#veditor:focus + .waline-wrapper .valine .vwrap .vedit::after,
-#veditor:focus + .valine-wrapper .valine .vwrap .vedit::after {
+#veditor:focus + .valine-wrapper #valine .vwrap .vedit::after {
   background: #00f;
 }
-.waline-wrapper #waline .vwrap .vedit button,
-.valine-wrapper #waline .vwrap .vedit button,
-.waline-wrapper .valine .vwrap .vedit button,
-.valine-wrapper .valine .vwrap .vedit button {
+.valine-wrapper #valine .vwrap .vedit button {
   color: #000;
   background: #f0ffff;
 }
-.waline-wrapper #waline .vempty,
-.valine-wrapper #waline .vempty,
-.waline-wrapper .valine .vempty,
-.valine-wrapper .valine .vempty {
+.valine-wrapper #valine .vcards .vcontent img {
+  display: inline-block !important;
+}
+.valine-wrapper #valine .vempty {
+  display: none !important;
+}
+.valine-wrapper #valine .vpower.txt-right {
+  display: none !important;
+}
+.waline-wrapper {
+  border-radius: 3px;
+  width: 99%;
+  margin: 0 auto;
+  margin-top: 12px;
+  padding: 12px;
+  background-color: rgba(255,255,255,0.65);
+}
+@media screen and (min-width: 768px) {
+  .waline-wrapper {
+    background-color: rgba(255,255,255,0.65);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.24);
+  }
+}
+.waline-wrapper #waline {
+  background-color: rgba(255,255,255,0.65);
+}
+.waline-wrapper #waline > * {
+  padding: 0 12px;
+}
+.waline-wrapper #waline .vwrap {
+  border: 0px !important;
+}
+.waline-wrapper #waline .vwrap .vheader {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+.waline-wrapper #waline .vwrap .vheader > * {
+  width: 30%;
+  border: 1px dashed #dedede;
+}
+.waline-wrapper #waline .vwrap .vheader > *:hover {
+  border-color: #000;
+}
+.waline-wrapper #waline .vwrap .vheader > *:focus {
+  border-color: #000;
+}
+.waline-wrapper #waline .vwrap .vedit {
+  padding: 12px;
+  margin: 12px;
+  position: relative;
+  z-index: 1;
+}
+.waline-wrapper #waline .vwrap .vedit:hover::after {
+  border: 1px dashed #000;
+}
+.waline-wrapper #waline .vwrap .vedit::after {
+  content: '';
+  border: 1px dashed #dedede;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+#veditor:focus + .waline-wrapper #waline .vwrap .vedit::after {
+  background: #00f;
+}
+.waline-wrapper #waline .vwrap .vedit button {
+  color: #000;
+  background: #f0ffff;
+}
+.waline-wrapper #waline .vcards .vcontent img {
+  display: inline-block !important;
+}
+.waline-wrapper #waline .vempty {
   display: none !important;
 }
 #sakura-panel {
